@@ -10,7 +10,12 @@ import {
   BenefitsList,
   FinalTitle,
   HeroContainer,
+  DescriptionContainer,
+  ImgThumb,
+  Image,
 } from "./HomeStyled";
+
+import subtitle from "../../assets/hero/subtitle.jpg";
 
 const Home = () => {
   return (
@@ -21,13 +26,19 @@ const Home = () => {
           road!
         </Title>
       </HeroContainer>
+      <DescriptionContainer>
+        <ImgThumb>
+          <Image src={subtitle} alt="family in the camper"></Image>
+        </ImgThumb>
+        <SubTitle>
+          At CamperRental, we're passionate about providing you with the
+          ultimate road-tripping experience. Whether you're planning a family
+          vacation, a weekend getaway with friends, or a solo adventure, our
+          fleet of top-quality campers is ready to accompany you on your
+          journey.
+        </SubTitle>
+      </DescriptionContainer>
 
-      <SubTitle>
-        At CamperRental, we're passionate about providing you with the ultimate
-        road-tripping experience. Whether you're planning a family vacation, a
-        weekend getaway with friends, or a solo adventure, our fleet of
-        top-quality campers is ready to accompany you on your journey.
-      </SubTitle>
       <AboutContainer>
         <AboutTitle>Why choose us?</AboutTitle>
         <BenefitsList>
