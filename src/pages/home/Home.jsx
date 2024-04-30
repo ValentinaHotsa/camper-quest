@@ -1,5 +1,6 @@
 // import { useEffect, useState } from "react";
 // import { Link, useLocation } from "react-router-dom";
+
 import {
   HomeSection,
   Title,
@@ -8,14 +9,19 @@ import {
   AboutTitle,
   BenefitsList,
   FinalTitle,
+  HeroContainer,
 } from "./HomeStyled";
 
 const Home = () => {
   return (
     <HomeSection>
-      <Title>
-        Welcome to CamperRental, where adventure meets comfort on the open road!
-      </Title>
+      <HeroContainer>
+        <Title>
+          Welcome to CamperRental, where adventure meets comfort on the open
+          road!
+        </Title>
+      </HeroContainer>
+
       <SubTitle>
         At CamperRental, we're passionate about providing you with the ultimate
         road-tripping experience. Whether you're planning a family vacation, a
