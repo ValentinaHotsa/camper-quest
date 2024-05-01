@@ -13,7 +13,6 @@ export const ContainerCard = styled.div`
 export const ContainerInfo = styled.div`
   padding-left: 24px;
   width: 526px;
-
   height: 310px;
 `;
 export const TopWrap = styled.div`

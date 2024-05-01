@@ -49,15 +49,14 @@ export const CamperCard = ({ data }) => {
           <TopWrap>
             <TitleCard>{name} </TitleCard>
             <Price>
-              €{price}.00
+              €{price}
               <span>
-                {" "}
                 <svg>
                   <use href={`${svg}#icon-heart`}></use>
                 </svg>
               </span>
             </Price>
-          </TopWrap>{" "}
+          </TopWrap>
           <RevLocWraper>
             <Rating>
               <svg>

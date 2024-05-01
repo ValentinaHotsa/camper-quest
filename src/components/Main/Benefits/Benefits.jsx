@@ -1,0 +1,53 @@
+import {
+  BenefitsContainer,
+  BenefitsItem,
+  BenefitsList,
+  BenefitsSection,
+  ItemContainer,
+} from "./BenefitsStyles";
+import { MdOutlineSupportAgent } from "react-icons/md";
+import svg from "../../../assets/icons.svg";
+const Benefits = () => {
+  return (
+    <BenefitsSection>
+      <BenefitsContainer>
+        <BenefitsList>
+          <li>
+            <ItemContainer>
+              <svg>
+                <use href={`${svg}#icon-quality`}></use>
+              </svg>
+              <p>Quality Assurance</p>
+            </ItemContainer>
+          </li>
+          <li>
+            <ItemContainer>
+              <svg>
+                <use href={`${svg}#icon-variety`}></use>
+              </svg>
+              <p>Variety of Options</p>
+            </ItemContainer>
+          </li>
+          <li>
+            <ItemContainer>
+              <svg>
+                <use href={`${svg}#icon-support`}></use>
+              </svg>
+              <p>Customer Support</p>
+            </ItemContainer>
+          </li>
+          <li>
+            <ItemContainer>
+              <svg>
+                <use href={`${svg}#icon-calendarH`}></use>
+              </svg>
+              <p>Convenience</p>
+            </ItemContainer>
+          </li>
+        </BenefitsList>
+      </BenefitsContainer>
+    </BenefitsSection>
+  );
+};
+
+export default Benefits;
