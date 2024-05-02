@@ -45,29 +45,12 @@ export const Title = styled.h1`
   text-shadow: 1px 1px 23px rgba(200, 200, 200, 0.7);
 `;
 
-export const AboutContainer = styled.div`
-  margin-top: 60px;
-  margin-bottom: 100px;
-  background-color: #e7ebfc;
-  padding: 50px 80px;
-`;
-export const AboutTitle = styled.h3``;
-export const BenefitsList = styled.ul`
-  font-size: 15px;
-  line-height: 1.8;
-  display: flex;
-  flex-direction: column;
-  row-gap: 10px;
-  padding-top: 25px;
-  padding-bottom: 50px;
-`;
-export const FinalTitle = styled.h3``;
-
 export const Header = styled.header`
-  padding: 25px 60px;
-  font-size: 35px;
+  padding: 22px 60px;
+
+  font-size: 24px;
   font-family: Inter;
-  background-color: ${theme.colors.lightGray};
+  // background-color: ${theme.colors.lightGray};
 `;
 export const Navigation = styled.ul`
   display: flex;
@@ -84,30 +67,36 @@ export const Navigation = styled.ul`
   }
 `;
 
-export const DescriptionContainer = styled.section`
+export const DescriptionSection = styled.section`
   background-color: ${theme.colors.gray};
   max-width: 1440px;
-  // height: 500px;
-  background-size: cover;
-  margin: 100px auto;
+  height: 500px;
+
+  // justify-content: center;
+  //
+`;
+
+export const DescriptionContainer = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
   align-items: center;
-  gap: 100px;
+  justify-content: space-between;
 `;
 export const ImgThumb = styled.div`
   width: 360px;
-  position: relative;
+
   height: 520px;
+  position: relative;
 `;
 export const Image = styled.img`
   width: 100%;
-  // height: 100%;
+  height: 100%;
   object-fit: cover;
   position: absolute;
-  left: 50px;
   top: 50px;
+  left: 80px;
+  box-shadow: 0px 0px 40px -5px rgba(133, 133, 133, 1);
 `;
 export const SubTitle = styled.h2`
   font-family: Inter;

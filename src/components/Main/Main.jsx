@@ -5,14 +5,17 @@ import {
   AboutContainer,
   AboutTitle,
   BenefitsList,
-  FinalTitle,
   HeroContainer,
   DescriptionContainer,
+  DescriptionSection,
   ImgThumb,
   Image,
 } from "./MainStyles";
 import subtitle from "../../assets/hero/subtitle.jpg";
+
 import Benefits from "./Benefits/Benefits";
+import FinalTitle from "./FinalTitle/FinalTitle";
+
 const Main = () => {
   return (
     <HomeSection>
@@ -23,22 +26,25 @@ const Main = () => {
         </Title>
       </HeroContainer>
       <Benefits />
-      <DescriptionContainer>
-        <ImgThumb>
-          <Image src={subtitle} alt="family in the camper"></Image>
-        </ImgThumb>
-        <SubTitle>
-          At CamperRental, we're passionate about providing you with the
-          ultimate road-tripping experience. Whether you're planning a family
-          vacation, a weekend getaway with friends, or a solo adventure, our
-          fleet of top-quality campers is ready to accompany you on your
-          journey.
-        </SubTitle>
-      </DescriptionContainer>
+      <DescriptionSection>
+        <DescriptionContainer>
+          <ImgThumb>
+            <Image src={subtitle} alt="family in the camper"></Image>
+          </ImgThumb>
+          <SubTitle>
+            At CamperRental, we're passionate about providing you with the
+            ultimate road-tripping experience. Whether you're planning a family
+            vacation, a weekend getaway with friends, or a solo adventure, our
+            fleet of top-quality campers is ready to accompany you on your
+            journey.
+          </SubTitle>
+        </DescriptionContainer>
+      </DescriptionSection>
+      <FinalTitle />
 
-      <AboutContainer>
-        <AboutTitle>Why choose us?</AboutTitle>
-        <BenefitsList>
+      {/* <AboutContainer> */}
+      {/* <AboutTitle>Why choose us?</AboutTitle> */}
+      {/* <BenefitsList>
           <li>
             We pride ourselves on offering more than just a vehicle rental
             service; we deliver an unforgettable travel experience.
@@ -61,13 +67,8 @@ const Main = () => {
             the perfect camper for your needs to providing tips and
             recommendations for your itinerary.
           </li>
-        </BenefitsList>
-
-        <FinalTitle>
-          Start your journey today by browsing our fleet and booking your camper
-          rental online. Let's make your travel dreams a reality!
-        </FinalTitle>
-      </AboutContainer>
+        </BenefitsList> */}
+      {/* </AboutContainer> */}
     </HomeSection>
   );
 };
