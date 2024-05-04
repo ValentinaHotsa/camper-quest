@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+import { useRef } from "react";
 import {
   selectAdverts,
   selectPageLimit,
@@ -13,12 +14,17 @@ const LoadMoreBtn = () => {
   const adverts = useSelector(selectAdverts);
   const page = useSelector(selectPage);
   const pageLimit = useSelector(selectPageLimit);
+  // const buttonRef = useRef(null);
 
-  const handleLoadMore = () => {
+  const handleLoadMore = (event) => {
+    event.preventDefault();
+
     const nextPage = page + 1;
+    const offset = page * pageLimit;
 
     dispatch(setPage(nextPage));
-    dispatch(fetchAllAdverts({ page: nextPage, limit: pageLimit }));
+    dispatch(fetchAllAdverts({ page: nextPage, limit: pageLimit, offset }));
+    // buttonRef.current.focus();
   };
   return (
     <>
@@ -29,3 +35,7 @@ const LoadMoreBtn = () => {
   );
 };
 export default LoadMoreBtn;
+
+//  <LoadMore type="button" onClick={handleLoadMore} ref={buttonRef}>
+//    Load more
+//  </LoadMore>;

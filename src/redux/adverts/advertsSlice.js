@@ -32,7 +32,14 @@ const advertsSlice = createSlice({
       .addCase(fetchAllAdverts.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.adverts = action.payload;
+        const { page, pageLimit } = state;
+        const newItems = action.payload;
+
+        if (page === 1) {
+          state.adverts = newItems;
+        } else {
+          state.adverts = [...state.adverts, ...newItems];
+        }
       })
       .addCase(fetchAllAdverts.rejected, (state, action) => {
         state.isLoading = false;
