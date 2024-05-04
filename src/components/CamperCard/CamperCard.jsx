@@ -49,7 +49,7 @@ export const CamperCard = ({ data }) => {
           <TopWrap>
             <TitleCard>{name} </TitleCard>
             <Price>
-              €{price}
+              €{price + " "}
               <span>
                 <svg>
                   <use href={`${svg}#icon-heart`}></use>

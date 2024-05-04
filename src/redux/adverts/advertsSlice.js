@@ -8,18 +8,6 @@ const advertsInitialState = {
   page: 1,
   pageLimit: 4,
 };
-// const handlePending = (state) => {
-//   state.isLoading = true;
-// };
-
-// const handleReject = (state, action) => {
-//   state.error = action.payload;
-// };
-
-// const handleFulfilled = (state) => {
-//   state.isLoading = false;
-//   state.error = null;
-// };
 
 const advertsSlice = createSlice({
   name: "adverts",
