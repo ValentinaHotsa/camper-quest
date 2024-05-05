@@ -27,7 +27,6 @@ export const FormLocation = styled.form`
     border-radius: 10px;
     border: none;
     background: rgb(247, 247, 247);
-
     padding-left: 44px;
     padding-bottom:18px;
     padding-top:18px;

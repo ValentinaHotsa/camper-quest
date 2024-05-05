@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Modal from "../Modal/Modal";
-import { CardModal } from "./CardModal/CardModal";
 import svg from "../../assets/icons.svg";
 import {
   ContainerCard,
@@ -19,6 +18,7 @@ import {
   DetailsList,
   TopWrap,
 } from "./CamperCardStyled";
+
 export const CamperCard = ({ data }) => {
   const {
     name,
@@ -32,9 +32,11 @@ export const CamperCard = ({ data }) => {
     details,
     engine,
     transmission,
+    _id,
   } = data;
 
   const [isOpen, setIsOpen] = useState(false);
+
   const toggleModal = () => {
     setIsOpen(!isOpen);
   };
@@ -43,7 +45,7 @@ export const CamperCard = ({ data }) => {
     <>
       <ContainerCard>
         <ImgContainer>
-          <ImgPrewiev src={gallery[0]}></ImgPrewiev>
+          <ImgPrewiev src={gallery[0]} alt={`${name}camper image`}></ImgPrewiev>
         </ImgContainer>
         <ContainerInfo>
           <TopWrap>
@@ -114,12 +116,14 @@ export const CamperCard = ({ data }) => {
               </li>
             </DetailsList>
           </DetailsContainer>
-          <Button onClick={toggleModal}>Show more</Button>
+
+          <Button type="button" onClick={toggleModal}>
+            Show more
+          </Button>
         </ContainerInfo>
+
         {isOpen && (
-          <Modal onClose={toggleModal}>
-            <CardModal onClose={toggleModal} data={data}></CardModal>
-          </Modal>
+          <Modal isOpen={isOpen} onClose={toggleModal} data={data}></Modal>
         )}
       </ContainerCard>
     </>

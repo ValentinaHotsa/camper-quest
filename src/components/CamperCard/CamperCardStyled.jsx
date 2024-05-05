@@ -73,15 +73,10 @@ export const Location = styled.p`
 `;
 export const Price = styled.div`
   font-family: Inter;
-
   font-size: 24px;
-
   font-weight: 600;
-
   line-height: 30px;
-
   letter-spacing: 0%;
-
   text-align: left;
   svg {
     width: 20px;
@@ -90,7 +85,7 @@ export const Price = styled.div`
     stroke: #101828;
   }
 `;
-export const ImgList = styled.ul``;
+export const ImgList = styled.div``;
 export const Description = styled.p`
   font-weight: 400;
   font-size: 16px;
@@ -104,7 +99,6 @@ export const Description = styled.p`
 export const ImgContainer = styled.div``;
 export const ImgPrewiev = styled.img`
   width: 290px;
-
   height: 310px;
   border-radius: 10px;
   object-fit: cover;
@@ -112,10 +106,8 @@ export const ImgPrewiev = styled.img`
 `;
 export const Button = styled.button`
   width: 166px;
-
   height: 56px;
   justify-content: center;
-
   align-items: center;
   border-radius: 200px;
   background: rgb(228, 72, 72);
