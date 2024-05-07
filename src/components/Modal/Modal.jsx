@@ -1,6 +1,6 @@
-import { useEffect, useRef } from "react";
-import svg from "../../../src/logo.svg";
-import ReactDOM from "react-dom";
+import { useEffect, useRef, useState } from "react";
+import svg from "../../assets/icons.svg";
+
 import {
   ModalContent,
   ModalWrapper,
@@ -16,9 +16,15 @@ import {
   TopWrap,
   TabWraper,
   Button,
+  TabContent,
+  LeftWrap,
+  RightWrap,
+  ImgThumb,
 } from "./ModalStyled";
 import Features from "./Features/Features";
 import Review from "./Reviews/Review";
+
+import FormComponent from "./FormComponent/FormComponent";
 
 const Modal = ({ onClose, isOpen, data }) => {
   const targetElement = document.getElementById("modal-root");
@@ -64,6 +70,10 @@ const Modal = ({ onClose, isOpen, data }) => {
       document.removeEventListener("keydown", eventHandler);
     };
   }, []);
+  const [activeTab, setActiveTab] = useState("Features");
+  const handleTabChange = (name) => {
+    setActiveTab(name);
+  };
 
   return (
     <>
@@ -92,30 +102,51 @@ const Modal = ({ onClose, isOpen, data }) => {
                 {location}
               </Location>
             </RevLocWraper>
-            <Price>
-              €{price + " "}
-              <span>
-                <svg>
-                  <use href={`${svg}#icon-heart`}></use>
-                </svg>
-              </span>
-            </Price>
+            <Price>€{price + " "}</Price>
             <ImgList>
-              {gallery.map((img) => (
-                <img src={img} key={img} alt={name}></img>
-              ))}
+              <ImgThumb>
+                <img src={gallery[0]} alt={name} />
+              </ImgThumb>
+              <ImgThumb>
+                <img src={gallery[1]} alt={name} />
+              </ImgThumb>
+              <ImgThumb>
+                <img src={gallery[2]} alt={name} />
+              </ImgThumb>
             </ImgList>
             <Description>{description}</Description>
             <TabWraper>
-              <Button type="button">Features</Button>
-              <Button type="button">Reviews</Button>
+              <Button
+                type="button"
+                onClick={() => handleTabChange("Features")}
+                active={activeTab === "Features"}
+              >
+                Features
+              </Button>
+              <Button
+                type="button"
+                onClick={() => handleTabChange("Reviews")}
+                active={activeTab === "Reviews"}
+              >
+                Reviews
+              </Button>
             </TabWraper>
-            <Features data={data} />
-            <Review />
+
+            <TabContent>
+              <LeftWrap>
+                {activeTab === "Features" ? (
+                  <Features data={data} />
+                ) : (
+                  <Review data={data} />
+                )}
+              </LeftWrap>
+              <RightWrap>
+                <FormComponent />
+              </RightWrap>
+            </TabContent>
           </ModalContent>
         </ModalWrapper>
       </Popup>
-      ,
     </>
   );
 };

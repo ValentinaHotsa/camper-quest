@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 export const AsideContainer = styled.aside`
   float: left;
-  padding-left: 64px;
+
   width: 360px;
 `;
 export const FormLocation = styled.form`

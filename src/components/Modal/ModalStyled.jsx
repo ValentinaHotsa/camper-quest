@@ -133,9 +133,13 @@ export const ImgList = styled.div`
   display: flex;
   flex-direction: row;
   gap: 16px;
+`;
+export const ImgThumb = styled.div`
+  width: 280px;
+  height: 310px;
   img {
-    width: 290px;
-    height: 310px;
+    width: 100%;
+    height: 100%;
     border-radius: 10px;
     object-fit: cover;
     object-position: center;
@@ -163,8 +167,44 @@ export const Button = styled.button`
   font-size: 20px;
   font-weight: 600;
   line-height: 24px;
-  width: 85px;
-  height: 24px;
+  // height: 24px;
   border: none;
   background-color: transparent;
+  position: relative;
+  ${({ active }) =>
+    active &&
+    `
+    &:after{
+     position:absolute;
+     content: "";
+     left: 0;
+     bottom: 0;
+     top: 48px;
+     width: 100%;
+     height: 5px;
+     background-color: rgb(228, 72, 72);
+    }
+     
+    `}
+`;
+export const TabContent = styled.div`
+  display: flex;
+  margin-top: 44px;
+  gap: 24px;
+`;
+export const LeftWrap = styled.div`
+  width: 430px;
+`;
+export const RightWrap = styled.div`
+  padding: 24px;
+  width: 448px;
+  height: 532px;
+  box-sizing: border-box;
+  border: 1px solid rgba(16, 24, 40, 0.2);
+  border-radius: 10px;
+`;
+
+export const activeTabStyle = styled`
+  border-bottom: 3px solid rgba(16, 24, 40, 0.2);
+
 `;

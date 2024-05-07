@@ -9,9 +9,10 @@ export const ContainerCard = styled.div`
   border-radius: 20px;
   background: rgb(255, 255, 255);
   padding: 24px;
+  gap: 24px;
 `;
 export const ContainerInfo = styled.div`
-  padding-left: 24px;
+  // padding-left: 24px;
   width: 526px;
   height: 310px;
 `;
@@ -28,42 +29,43 @@ export const TitleCard = styled.h2`
   letter-spacing: 0%;
   text-align: left;
   margin: 0;
+  width: 400px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 export const RevLocWraper = styled.div`
   display: flex;
   gap: 18px;
   margin-top: 8px;
 `;
-export const Rating = styled.p`
+export const Rating = styled.div`
   color: rgb(16, 24, 40);
   font-family: Inter;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 4px;
   text-decoration-line: underline;
   svg {
-    width: 16px;
+    width: 18px;
     height: 16px;
     fill: #ffc531;
     stroke: #ffc531;
   }
 `;
-export const Location = styled.p`
+export const Location = styled.div`
   color: rgb(16, 24, 40);
-
   font-family: Inter;
-
   font-size: 16px;
-
   font-weight: 400;
-
   line-height: 24px;
-
-  letter-spacing: 0%;
-
   margin: 0;
-  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 4px;
   svg {
     width: 16px;
     height: 16px;
@@ -85,7 +87,7 @@ export const Price = styled.div`
     stroke: #101828;
   }
 `;
-export const ImgList = styled.div``;
+
 export const Description = styled.p`
   font-weight: 400;
   font-size: 16px;
@@ -96,13 +98,17 @@ export const Description = styled.p`
   text-overflow: ellipsis;
   margin-top: 24px;
 `;
-export const ImgContainer = styled.div``;
-export const ImgPrewiev = styled.img`
+export const ImgContainer = styled.div`
   width: 290px;
-  height: 310px;
+  height: 305px;
+`;
+
+export const ImgPrewiev = styled.img`
+  width: 100%;
+  height: 100%;
   border-radius: 10px;
   object-fit: cover;
-  object-position: center;
+  object-position: right;
 `;
 export const Button = styled.button`
   width: 166px;
@@ -134,6 +140,11 @@ export const DetailsList = styled.ul`
     padding: 12px 18px 12px 18px;
     border-radius: 100px;
     background: rgb(242, 244, 247);
+    color: rgb(16, 24, 40);
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
   }
   svg {
     width: 20px;

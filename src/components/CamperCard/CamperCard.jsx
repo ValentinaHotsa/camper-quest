@@ -8,7 +8,6 @@ import {
   Rating,
   Location,
   Price,
-  ImgList,
   ContainerInfo,
   Description,
   ImgContainer,
@@ -45,7 +44,10 @@ export const CamperCard = ({ data }) => {
     <>
       <ContainerCard>
         <ImgContainer>
-          <ImgPrewiev src={gallery[0]} alt={`${name}camper image`}></ImgPrewiev>
+          <ImgPrewiev
+            src={gallery[0]}
+            alt={`${name} camper image`}
+          ></ImgPrewiev>
         </ImgContainer>
         <ContainerInfo>
           <TopWrap>
@@ -73,7 +75,7 @@ export const CamperCard = ({ data }) => {
               {location}
             </Location>
           </RevLocWraper>
-          {/* <ImgList></ImgList> */}
+
           <Description>{description}</Description>
           <DetailsContainer>
             <DetailsList>
