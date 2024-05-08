@@ -1,85 +1,136 @@
-import { useFormik } from "formik";
+import { Formik, Field, Form, ErrorMessage } from "formik";
+import * as Yup from "yup";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import svg from "../../../assets/icons.svg";
+
 import {
-  Form,
   TitleForm,
   SubtitleForm,
   Input,
   Button,
-  Textarea,
-  CustomDatePicker,
+  StyledDatePicker,
   HiddenLabel,
+  Error,
+  InputField,
+  TextareaField,
+  FormStyle,
 } from "./FormComponentStyled";
 import { useState } from "react";
+
 const FormComponent = () => {
-  const formik = useFormik({
-    initialValues: {
-      name: "",
-      email: "",
-      date: "",
-      comment: "",
-    },
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
-    },
+  const validationSchema = Yup.object().shape({
+    name: Yup.string()
+      .min(2, "Too Short!")
+      .max(15, "Too Long!")
+      .required("Name is required"),
+    email: Yup.string().email("Invalid email").required("Email is required"),
+    comment: Yup.string().min(10, "Too Short!").max(200, "Too Long!"),
+    date: Yup.date()
+      .nullable()
+      .required("Booking date is required")
+      .min(new Date(), "The booking date must be in the future"),
   });
-  const [startDate, setStartDate] = useState("");
+
+  const [selectedDate, setSelectedDate] = useState(null);
+  const handleDateChange = (date, form) => {
+    console.log("Selected Date:", date);
+    setSelectedDate(date);
+    form.setFieldValue("date", date || "");
+  };
+
+  const initialValues = {
+    name: "",
+    email: "",
+    date: null,
+    comment: "",
+  };
+
+  const handleSubmit = (values, { setSubmitting, resetForm }) => {
+    resetForm();
+    alert(JSON.stringify(values, null, 2));
+    setSubmitting(false);
+  };
+
   return (
     <>
       <TitleForm>Book your campervan now</TitleForm>
       <SubtitleForm>
         Stay connected! We are always ready to help you.
       </SubtitleForm>
-      <Form onSubmit={formik.handleSubmit}>
-        <HiddenLabel for="name">Enter your name</HiddenLabel>
-        <Input
-          id="name"
-          name="name"
-          type="text"
-          placeholder="Name"
-          onChange={formik.handleChange}
-          value={formik.values.name}
-        />
-        <HiddenLabel for="email">Enter your email</HiddenLabel>
-        <Input
-          id="email"
-          name="email"
-          type="email"
-          placeholder="Email"
-          onChange={formik.handleChange}
-          value={formik.values.email}
-        />
-        <HiddenLabel for="date">Select booking date</HiddenLabel>
-        <CustomDatePicker
-          id="date"
-          selected={formik.values.date}
-          onChange={(date) => formik.setFieldValue("date", date)}
-          dateFormat="dd.MM.yyyy"
-          icon={
-            <svg>
-              <use href={`${svg}#icon-calendarH`}></use>
-            </svg>
-          }
-          placeholderText="Booking date"
-          className="custom-datepicker"
-        />
-        <HiddenLabel form="comment">
-          Write comment with details for us
-        </HiddenLabel>
-        <Textarea
-          id="comment"
-          name="comment"
-          type="text"
-          placeholder="Comment"
-          onChange={formik.handleChange}
-          rows="3"
-          cols="3"
-          value={formik.values.comment}
-        />
-        <Button type="submit">Send</Button>
-      </Form>
+      <Formik
+        initialValues={initialValues}
+        onSubmit={handleSubmit}
+        validationSchema={validationSchema}
+        validateOnChange
+        validateOnBlur
+      >
+        {({ isSubmitting }) => (
+          <FormStyle as={Form}>
+            <HiddenLabel htmlFor="name">Enter your name</HiddenLabel>
+            <Field
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Name"
+              as={InputField}
+            />
+            <Error name="name" component="div" />
+            <HiddenLabel htmlFor="email">Enter your email</HiddenLabel>
+            <Field
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Email"
+              as={InputField}
+            />
+            <Error name="email" component="div" />
+
+            <HiddenLabel htmlFor="date">Select booking date</HiddenLabel>
+            <Field name="date">
+              {({ field, form }) => (
+                <>
+                  <StyledDatePicker
+                    selected={field.value}
+                    id="date"
+                    onChange={(date) => {
+                      form.setFieldValue(field.name, date);
+                      form.validateField(field.name);
+                    }}
+                    dateFormat="dd.MM.yyyy"
+                    placeholderText="Booking date"
+                    icon={
+                      <svg>
+                        <use href={`${svg}#icon-calendarH`}></use>
+                      </svg>
+                    }
+                  />
+
+                  {form.errors.date && form.touched.date && (
+                    <Error name="date" component="div" />
+                  )}
+                </>
+              )}
+            </Field>
+            <HiddenLabel htmlFor="comment">
+              Write comment with details for us
+            </HiddenLabel>
+            <Field
+              id="comment"
+              name="comment"
+              type="text"
+              placeholder="Comment"
+              rows="3"
+              cols="3"
+              as={TextareaField}
+            />
+            <ErrorMessage name="comment" component="div" />
+            <Button type="submit" disabled={isSubmitting}>
+              Send
+            </Button>
+          </FormStyle>
+        )}
+      </Formik>
     </>
   );
 };

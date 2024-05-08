@@ -1,11 +1,19 @@
 import styled from "@emotion/styled";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-export const Form = styled.form`
+import { ErrorMessage, Form } from "formik";
+
+export const FormStyle = styled(Form)`
   display: flex;
   flex-direction: column;
   gap: 14px;
 `;
+
+export const Error = styled(ErrorMessage)`
+  font-family: Inter;
+  color: red;
+`;
+
 export const TitleForm = styled.h3`
   color: rgb(16, 24, 40);
   font-family: Inter;
@@ -23,7 +31,7 @@ export const SubtitleForm = styled.h4`
   line-height: 24px;
   margin-bottom: 24px;
 `;
-export const Input = styled.input`
+export const InputField = styled.input`
   width: 364px;
   border-radius: 10px;
   border: none;
@@ -35,8 +43,11 @@ export const Input = styled.input`
   font-weight: 400;
   line-height: 20px;
   letter-spacing: 0%;
+
+  outline:none;
+  }
 `;
-export const Textarea = styled.textarea`
+export const TextareaField = styled.textarea`
   width: 364px;
   height: 114px;
   border-radius: 10px;
@@ -48,6 +59,7 @@ export const Textarea = styled.textarea`
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
+  outline: none;
   resize: none;
 `;
 export const Button = styled.button`
@@ -67,9 +79,7 @@ export const Button = styled.button`
   }
 `;
 
-export const CustomDatePicker = styled(DatePicker)`
-  // width: 100%;
-
+export const StyledDatePicker = styled(DatePicker)`
   border-radius: 4px;
   background: rgb(247, 247, 247);
   width: 364px;
@@ -81,8 +91,8 @@ export const CustomDatePicker = styled(DatePicker)`
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
+  outline: none;
 `;
-
 export const HiddenLabel = styled.label`
   position: absolute;
   width: 1px;
