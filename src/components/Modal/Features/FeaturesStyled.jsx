@@ -6,7 +6,7 @@ export const LeftWrap = styled.div`
 `;
 export const FeaturesList = styled.ul`
   width: 430px;
-  height: 200px;
+  height: 250px;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -36,13 +36,13 @@ export const TitleDetail = styled.h3`
   font-size: 20px;
   font-weight: 600;
   line-height: 24px;
-  margin-top: 44px;
+  margin-top: 17px;
 `;
 export const DetailsList = styled.ul`
   border-top: 1px solid rgba(16, 24, 40, 0.1);
   color: rgb(16, 24, 40);
-  margin-top: 24px;
-  padding-top: 10px;
+  margin-top: 14px;
+  padding-top: px;
   font-family: Inter;
   font-size: 18px;
 

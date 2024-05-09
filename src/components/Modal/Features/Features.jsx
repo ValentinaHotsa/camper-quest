@@ -15,7 +15,7 @@ const Features = ({ data }) => {
     width,
     tank,
     consumption,
-
+    kitchen,
     adults,
     details,
     engine,
@@ -45,79 +45,108 @@ const Features = ({ data }) => {
             </svg>
             {engine}
           </li>
+          {kitchen > 0 ? (
+            <li>
+              <svg>
+                <use href={`${svg}#icon-kitchen`}></use>
+              </svg>
+              kitchen
+            </li>
+          ) : null}
 
-          <li>
-            <svg>
-              <use href={`${svg}#icon-kitchen`}></use>
-            </svg>
-            kitchen
-          </li>
           <li>
             <svg>
               <use href={`${svg}#icon-beds`}></use>
             </svg>
             {details.beds} beds
           </li>
-          <li>
-            <svg>
-              <use href={`${svg}#icon-microwave`}></use>
-            </svg>
-            Microwave
-          </li>
-          <li>
-            <svg>
-              <use href={`${svg}#icon-conditioner`}></use>
-            </svg>
-            {details.airConditioner} air conditioner
-          </li>
-          <li>
-            <svg>
-              <use href={`${svg}#icon-CD`}></use>
-            </svg>
-            CD
-          </li>
-          <li>
-            <svg>
-              <use href={`${svg}#icon-radio`}></use>
-            </svg>
-            Radio
-          </li>
-          <li>
-            <svg>
-              <use href={`${svg}#icon-hob`}></use>
-            </svg>
-            {details.hob} hob
-          </li>
-          <li>
-            <svg>
-              <use href={`${svg}#icon-toilet`}></use>
-            </svg>
-            Toilet
-          </li>
-          <li>
-            <svg>
-              <use href={`${svg}#icon-shower`}></use>
-            </svg>
-            Shower
-          </li>
-          <li>
-            <svg>
-              <use href={`${svg}#icon-freezer`}></use>
-            </svg>
-            Freezer
-          </li>
-          <li>
-            <svg>
-              <use href={`${svg}#icon-gas`}></use>
-            </svg>
-            Gas {details.gas}
-          </li>
-          <li>
-            <svg>
-              <use href={`${svg}#icon-water`}></use>
-            </svg>
-            Water {details.water}
-          </li>
+
+          {details.microwave > 0 ? (
+            <li>
+              <svg>
+                <use href={`${svg}#icon-microwave`}></use>
+              </svg>
+              Microwave
+            </li>
+          ) : null}
+          {details.airConditioner > 0 ? (
+            <li>
+              <svg>
+                <use href={`${svg}#icon-conditioner`}></use>
+              </svg>
+              {details.airConditioner} air conditioner
+            </li>
+          ) : null}
+          {details.CD > 0 ? (
+            <li>
+              <svg>
+                <use href={`${svg}#icon-CD`}></use>
+              </svg>
+              CD
+            </li>
+          ) : null}
+
+          {details.radio > 0 ? (
+            <li>
+              <svg>
+                <use href={`${svg}#icon-radio`}></use>
+              </svg>
+              Radio
+            </li>
+          ) : null}
+
+          {details.hob > 0 ? (
+            <li>
+              <svg>
+                <use href={`${svg}#icon-hob`}></use>
+              </svg>
+              {details.hob} hob
+            </li>
+          ) : null}
+
+          {details.toilet > 0 ? (
+            <li>
+              <svg>
+                <use href={`${svg}#icon-toilet`}></use>
+              </svg>
+              Toilet
+            </li>
+          ) : null}
+
+          {details.shower > 0 ? (
+            <li>
+              <svg>
+                <use href={`${svg}#icon-shower`}></use>
+              </svg>
+              Shower
+            </li>
+          ) : null}
+          {details.freezer > 0 ? (
+            <li>
+              <svg>
+                <use href={`${svg}#icon-freezer`}></use>
+              </svg>
+              Freezer
+            </li>
+          ) : null}
+
+          {details.gas !== "" ? (
+            <li>
+              <svg>
+                <use href={`${svg}#icon-gas`}></use>
+              </svg>
+              Gas {details.gas}
+            </li>
+          ) : null}
+
+          {details.water !== "" ? (
+            <li>
+              <svg>
+                <use href={`${svg}#icon-water`}></use>
+              </svg>
+              Water {details.water}
+            </li>
+          ) : null}
         </FeaturesList>
 
         <TitleDetail>Vehicle details</TitleDetail>
