@@ -14,7 +14,6 @@ export const Popup = styled.div`
   background-color: rgba(0, 0, 0, 0.8);
   transition: opacity 0.3s;
   overflow: auto;
-  padding: 70px 0;
 `;
 export const ModalWrapper = styled.div`
   position: absolute;
@@ -24,13 +23,34 @@ export const ModalWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 982px;
+  margin-top: 50px;
+
+  // ::-webkit-scrollbar {
+  //   width: 8px;
+  // }
+
+  // ::-webkit-scrollbar-track {
+  //   background-color: transparent;
+  //   width: 2px;
+  //   margin: 0 auto;
+  //   border-radius: 3px;
+  // }
+
+  // ::-webkit-scrollbar-thumb {
+  //   width: 8px;
+  //   border-radius: 7px;
+  //   height: 264px;
+  //   background-color: rgb(21, 21, 21);
+  // }
+
+  scrollbar-color: transparent transparent;
+  scrollbar-width: none;
 `;
 export const ModalContent = styled.div`
+  position: absolute;
   padding: 40px;
-
   height: auto;
-  border-radius: 10px;
+  border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.5);
   background-color: white;
   backdrop-filter: blur(5px);
@@ -38,26 +58,26 @@ export const ModalContent = styled.div`
   transition: opacity 0.3s, transform 0.3s;
   max-height: 90vh;
   overflow: auto;
+  max-width: 984px;
 `;
 export const CloseButton = styled.button`
-  // position: absolute;
 
   display: block;
   border: none;
-  // background-color: transparent;
+  background-color: transparent;
   padding: 0px;
   cursor: pointer;
-  
+  text-align:center;
+ width: 32px;
+    height: 32px;
     svg {
-    width: 16px;
-    height: 16px;
-    // fill: #101828;
-    // stroke: #101828;
+    width: 32px;
+    height: 32px;
+   
   }
   }
 `;
 
-// export const ModalCard = styled.div``;
 export const TopWrap = styled.div`
   display: flex;
   justify-content: space-between;
@@ -135,7 +155,7 @@ export const ImgList = styled.div`
   gap: 16px;
 `;
 export const ImgThumb = styled.div`
-  width: 280px;
+  width: 290px;
   height: 310px;
   img {
     width: 100%;

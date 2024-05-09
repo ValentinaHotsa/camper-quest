@@ -110,13 +110,13 @@ const Features = ({ data }) => {
             <svg>
               <use href={`${svg}#icon-gas`}></use>
             </svg>
-            Gas
+            Gas {details.gas}
           </li>
           <li>
             <svg>
               <use href={`${svg}#icon-water`}></use>
             </svg>
-            Water
+            Water {details.water}
           </li>
         </FeaturesList>
 

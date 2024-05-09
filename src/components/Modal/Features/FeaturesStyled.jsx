@@ -54,4 +54,8 @@ export const DetailsList = styled.ul`
     justify-content: space-between;
     padding-top: 14px;
   }
+
+  span {
+    text-transform: capitalize;
+  }
 `;
