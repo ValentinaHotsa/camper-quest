@@ -1,5 +1,11 @@
 import { useState } from "react";
+import {
+  addToFavorite,
+  removeFromFavorite,
+} from "../../redux/adverts/advertsSlice";
 import Modal from "../Modal/Modal";
+import { useDispatch, useSelector } from "react-redux";
+import { selectFavorites } from "../../redux/adverts/selectors";
 import svg from "../../assets/icons.svg";
 import {
   ContainerCard,
@@ -16,6 +22,7 @@ import {
   DetailsContainer,
   DetailsList,
   TopWrap,
+  FavoriteButton,
 } from "./CamperCardStyled";
 
 export const CamperCard = ({ data }) => {
@@ -35,11 +42,23 @@ export const CamperCard = ({ data }) => {
   } = data;
 
   const [isOpen, setIsOpen] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(false);
 
   const toggleModal = () => {
     setIsOpen(!isOpen);
   };
 
+  const dispatch = useDispatch();
+  const favorites = useSelector(selectFavorites);
+
+  const handleFavoriteToggle = () => {
+    if (isFavorite) {
+      dispatch(removeFromFavorite(data)); // data - данные текущего объявления
+    } else {
+      dispatch(addToFavorite(data)); // data - данные текущего объявления
+    }
+    setIsFavorite(!isFavorite);
+  };
   return (
     <>
       <ContainerCard>
@@ -52,14 +71,17 @@ export const CamperCard = ({ data }) => {
         <ContainerInfo>
           <TopWrap>
             <TitleCard>{name} </TitleCard>
-            <Price>
-              €{price + " "}
-              <span>
-                <svg>
-                  <use href={`${svg}#icon-heart`}></use>
-                </svg>
-              </span>
-            </Price>
+            <Price>€{price}</Price>
+            <FavoriteButton onClick={handleFavoriteToggle}>
+              <svg
+                style={{
+                  fill: isFavorite ? "#E44848" : "",
+                  stroke: isFavorite ? "#E44848" : "#101828",
+                }}
+              >
+                <use href={`${svg}#icon-heart`}></use>
+              </svg>
+            </FavoriteButton>
           </TopWrap>
           <RevLocWraper>
             <Rating>

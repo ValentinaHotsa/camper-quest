@@ -80,6 +80,11 @@ export const Price = styled.div`
   line-height: 30px;
   letter-spacing: 0%;
   text-align: left;
+`;
+
+export const FavoriteButton = styled.button`
+  border: none;
+  background-color: transparent;
   svg {
     width: 20px;
     height: 20px;

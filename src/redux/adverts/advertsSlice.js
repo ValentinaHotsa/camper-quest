@@ -7,6 +7,7 @@ const advertsInitialState = {
   error: null,
   page: 1,
   pageLimit: 4,
+  favoriteAdverts: [],
 };
 
 const advertsSlice = createSlice({
@@ -21,6 +22,16 @@ const advertsSlice = createSlice({
     },
     setPage: (state, a) => {
       state.page = a.payload;
+    },
+    addToFavorite: (state, action) => {
+      const advertToAdd = action.payload;
+      state.favoriteAdverts.push(advertToAdd);
+    },
+    removeFromFavorite: (state, action) => {
+      const advertToRemove = action.payload;
+      state.favoriteAdverts = state.favoriteAdverts.filter(
+        (advert) => advert.id !== advertToRemove.id
+      );
     },
   },
 
@@ -47,5 +58,6 @@ const advertsSlice = createSlice({
       });
   },
 });
-export const { setPage } = advertsSlice.actions;
+export const { setPage, addToFavorite, removeFromFavorite } =
+  advertsSlice.actions;
 export const advertsReducer = advertsSlice.reducer;
