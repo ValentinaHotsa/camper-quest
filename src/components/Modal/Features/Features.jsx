@@ -4,9 +4,8 @@ import {
   TitleDetail,
   DetailsList,
 } from "./FeaturesStyled";
-
 import svg from "../../../assets/icons.svg";
-import FormComponent from "../FormComponent/FormComponent";
+
 const Features = ({ data }) => {
   const {
     form,

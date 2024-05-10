@@ -45,7 +45,9 @@ export const UserName = styled.h3`
   line-height: 24px;
 `;
 
-export const Rating = styled.div``;
+// export const Rating = styled.div`
+//   font-size: 24px;
+// `;
 
 export const ReviewText = styled.p`
   color: ${theme.colors.gray};
@@ -53,4 +55,29 @@ export const ReviewText = styled.p`
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
+`;
+
+export const StarContainer = styled.div``;
+
+export const StarFilled = styled.svg`
+  width: 16px;
+  height: 16px;
+  fill: #ffc531;
+  stroke: #ffc531;
+`;
+
+export const StarEmpty = styled.svg`
+  width: 16px;
+  height: 16px;
+  fill: ${theme.colors.gray};
+  stroke: ${theme.colors.gray};
+`;
+
+export const StarIcon = styled.svg`
+  width: 16px;
+  height: 16px;
+  fill: ${({ filled }) =>
+    filled ? `${theme.colors.yellow}` : `${theme.colors.lightGray}`};
+  stroke: ${({ filled }) =>
+    filled ? `${theme.colors.yellow}` : `${theme.colors.lightGray}`};
 `;

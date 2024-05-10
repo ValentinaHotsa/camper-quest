@@ -4,13 +4,14 @@ import {
   Avatar,
   NameWraper,
   UserName,
-  Rating,
   ReviewText,
   ReviewsContainer,
 } from "./ReviewStyled";
+import Rating from "./Rating";
 
 const Review = ({ data }) => {
   const { reviews } = data;
+
   return (
     <ReviewsContainer>
       {reviews.map((review, index) => (
@@ -19,7 +20,9 @@ const Review = ({ data }) => {
             <Avatar>{review.reviewer_name.charAt(0)}</Avatar>
             <NameWraper>
               <UserName>{review.reviewer_name}</UserName>
-              <Rating>{review.reviewer_rating}</Rating>
+              <Rating rating={review.reviewer_rating}>
+                {review.reviewer_rating}
+              </Rating>
             </NameWraper>
           </LoginWraper>
           <ReviewText>{review.comment}</ReviewText>
