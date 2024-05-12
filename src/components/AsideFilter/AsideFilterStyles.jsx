@@ -30,6 +30,8 @@ export const FormLocation = styled.form`
     padding-left: 44px;
     padding-bottom:18px;
     padding-top:18px;
+  outline:none;
+
   paddin}
   svg {
     width: 18px;

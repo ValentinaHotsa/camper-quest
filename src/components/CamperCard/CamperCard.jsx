@@ -23,6 +23,7 @@ import {
   DetailsList,
   TopWrap,
   FavoriteButton,
+  PriceWrap,
 } from "./CamperCardStyled";
 
 export const CamperCard = ({ data }) => {
@@ -71,17 +72,19 @@ export const CamperCard = ({ data }) => {
         <ContainerInfo>
           <TopWrap>
             <TitleCard>{name} </TitleCard>
-            <Price>€{price}</Price>
-            <FavoriteButton onClick={handleFavoriteToggle}>
-              <svg
-                style={{
-                  fill: isFavorite ? "#E44848" : "",
-                  stroke: isFavorite ? "#E44848" : "#101828",
-                }}
-              >
-                <use href={`${svg}#icon-heart`}></use>
-              </svg>
-            </FavoriteButton>
+            <PriceWrap>
+              <Price>€{price}</Price>
+              <FavoriteButton onClick={handleFavoriteToggle}>
+                <svg
+                  style={{
+                    fill: isFavorite ? "#E44848" : "",
+                    stroke: isFavorite ? "#E44848" : "#101828",
+                  }}
+                >
+                  <use href={`${svg}#icon-heart`}></use>
+                </svg>
+              </FavoriteButton>
+            </PriceWrap>
           </TopWrap>
           <RevLocWraper>
             <Rating>
