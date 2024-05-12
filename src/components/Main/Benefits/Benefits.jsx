@@ -5,7 +5,7 @@ import {
   BenefitsSection,
   ItemContainer,
 } from "./BenefitsStyles";
-import { MdOutlineSupportAgent } from "react-icons/md";
+
 import svg from "../../../assets/icons.svg";
 const Benefits = () => {
   return (

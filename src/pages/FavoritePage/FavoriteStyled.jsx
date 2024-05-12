@@ -1,3 +1,3 @@
 import styled from "@emotion/styled/macro";
 
-export const FavouriteList = styled.ul``;
+export const FavoriteList = styled.ul``;
