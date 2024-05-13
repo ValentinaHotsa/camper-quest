@@ -1,8 +1,15 @@
 import styled from "@emotion/styled";
+import { theme } from "../../styles/root";
 export const AsideContainer = styled.aside`
   float: left;
+  margin: 0 auto;
 
-  width: 360px;
+  @media screen and (min-width: ${theme.breakpoint.tablet}) {
+  }
+  @media screen and (min-width: ${theme.breakpoint.desktop}) {
+    width: 360px;
+    margin: 0;
+  }
 `;
 export const FormLocation = styled.form`
   position: relative;
@@ -10,7 +17,7 @@ export const FormLocation = styled.form`
   flex-direction: column;
   gap: 8px;
   margin-bottom: 32px;
-  width: 360px;
+  width: 288px;
 
   label {
     color: rgba(16, 24, 40, 0.6);
@@ -42,6 +49,11 @@ export const FormLocation = styled.form`
     z-index: 1;
     top: 50px;
     left: 18px;
+  }
+   @media screen and (min-width: ${theme.breakpoint.tablet}) {
+
+  width: 360px;
+
   }
 `;
 
@@ -145,26 +157,40 @@ export const RadioWrap = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  gap: 8px;
-  width: 110px;
-  height: 95px;
+  width: 88px;
+  height: 75px;
   border: 1px solid rgba(16, 24, 40, 0.2);
   border-radius: 10px;
+  gap: 4px;
   cursor: pointer;
   &:hover {
     border-color: rgb(216, 67, 67);
   }
   span {
     color: rgb(16, 24, 40);
-    font-family: Inter;
-    font-size: 16px;
+
+    font-size: 12px;
     font-weight: 500;
-    line-height: 20px;
+    line-height: 12px;
   }
   svg {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     fill: transparent;
     stroke: #101828;
+  }
+  @media screen and (min-width: ${theme.breakpoint.tablet}) {
+    width: 110px;
+    height: 95px;
+    gap: 8px;
+
+    span {
+      font-size: 16px;
+      line-height: 20px;
+    }
+    svg {
+      width: 40px;
+      height: 40px;
+    }
   }
 `;
