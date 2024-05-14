@@ -1,4 +1,4 @@
-import { lazy } from "react";
+import { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 // import Home from '../pages/Home';
 
@@ -12,7 +12,7 @@ const SharedLayout = lazy(() =>
 
 const App = () => {
   return (
-    <>
+    <Suspense fallback={<div>Loading...</div>}>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Home />} />
@@ -22,7 +22,7 @@ const App = () => {
           <Route path="*" element={<h1>Error</h1>} />
         </Route>
       </Routes>
-    </>
+    </Suspense>
   );
 };
 export default App;

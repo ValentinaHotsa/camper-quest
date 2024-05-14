@@ -1,11 +1,12 @@
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import {
   addToFavorite,
   removeFromFavorite,
 } from "../../redux/adverts/advertsSlice";
+import { useEffect } from "react";
 import Modal from "../Modal/Modal";
 import { useDispatch, useSelector } from "react-redux";
-import { selectFavorites } from "../../redux/adverts/selectors";
+import { selectAdverts, selectFavorites } from "../../redux/adverts/selectors";
 import svg from "../../assets/icons.svg";
 import {
   ContainerCard,
@@ -41,7 +42,9 @@ export const CamperCard = ({ data }) => {
     transmission,
     _id,
   } = data;
-
+  const dispatch = useDispatch();
+  const favorite = useSelector(selectFavorites);
+  const adverts = useSelector(selectAdverts);
   const [isOpen, setIsOpen] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
 
@@ -49,16 +52,34 @@ export const CamperCard = ({ data }) => {
     setIsOpen(!isOpen);
   };
 
-  const dispatch = useDispatch();
-  const favorites = useSelector(selectFavorites);
+  const addFavorite = useCallback(
+    (advert) => {
+      const isFavorites = favorite.some((item) => item._id === advert._id);
+
+      if (!isFavorites) {
+        dispatch(addToFavorite(advert));
+      }
+    },
+    [dispatch, favorite]
+  );
+
+  const removeFavorite = useCallback(
+    (advert) => {
+      dispatch(removeFromFavorite(advert));
+    },
+    [dispatch]
+  );
+
+  useEffect(() => {
+    setIsFavorite(favorite.some((item) => item._id === data._id));
+  }, [data, favorite]);
 
   const handleFavoriteToggle = () => {
     if (isFavorite) {
-      dispatch(removeFromFavorite(data)); // data - данные текущего объявления
+      removeFavorite(data);
     } else {
-      dispatch(addToFavorite(data)); // data - данные текущего объявления
+      addFavorite(data);
     }
-    setIsFavorite(!isFavorite);
   };
   return (
     <>

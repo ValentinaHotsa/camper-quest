@@ -1,18 +1,32 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchAllAdverts } from "./advertsOperations";
 
-const advertsInitialState = {
+const handlePending = (state) => {
+  state.isLoading = true;
+  state.error = null;
+};
+const handleFulfilled = (state) => {
+  state.isLoading = false;
+  state.error = null;
+};
+
+const handleReject = (state, action) => {
+  state.loading = false;
+  state.error = action.payload;
+};
+
+const initialState = {
   adverts: [],
   isLoading: false,
   error: null,
   page: 1,
   pageLimit: 4,
-  favoriteAdverts: [],
+  favorites: [],
 };
 
 const advertsSlice = createSlice({
   name: "adverts",
-  initialState: advertsInitialState,
+  initialState,
 
   reducers: {
     clearAdverts: (state) => {
@@ -25,21 +39,19 @@ const advertsSlice = createSlice({
     },
     addToFavorite: (state, action) => {
       const advertToAdd = action.payload;
-      state.favoriteAdverts.push(advertToAdd);
+      state.favorites.push(advertToAdd);
     },
     removeFromFavorite: (state, action) => {
       const advertToRemove = action.payload;
-      state.favoriteAdverts = state.favoriteAdverts.filter(
-        (advert) => advert.id !== advertToRemove.id
+      state.favorites = state.favorites.filter(
+        (advert) => advert._id !== advertToRemove._id
       );
     },
   },
 
   extraReducers: (builder) => {
     builder
-      .addCase(fetchAllAdverts.pending, (state) => {
-        state.isLoading = true;
-      })
+      .addCase(fetchAllAdverts.pending, handlePending)
       .addCase(fetchAllAdverts.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
@@ -52,10 +64,14 @@ const advertsSlice = createSlice({
           state.adverts = [...state.adverts, ...newItems];
         }
       })
-      .addCase(fetchAllAdverts.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.payload;
-      });
+      .addCase(fetchAllAdverts.rejected, handleReject)
+
+      .addMatcher((action) => action.type.endsWith("/pending"), handlePending)
+      .addMatcher((action) => action.type.endsWith("/rejected"), handleReject)
+      .addMatcher(
+        (action) => action.type.endsWith("/fulfilled"),
+        handleFulfilled
+      );
   },
 });
 export const { setPage, addToFavorite, removeFromFavorite } =
