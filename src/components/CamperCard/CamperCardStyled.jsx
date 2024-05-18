@@ -122,6 +122,7 @@ export const Location = styled.div`
 `;
 export const PriceWrap = styled.div`
   display: flex;
+  gap: 12px;
 `;
 export const Price = styled.div`
   font-size: 24px;

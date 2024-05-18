@@ -5,9 +5,14 @@ export const Section = styled.section`
   padding: 120px 0;
   margin-top: 60px;
   margin-bottom: 120px;
+  max-width: 396px;
+  margin-left: auto;
+  margin-right: auto;
   @media screen and (min-width: ${theme.breakpoint.tablet}) {
+    max-width: 768px;
   }
   @media screen and (min-width: ${theme.breakpoint.desktop}) {
+    max-width: 1158px;
   }
 `;
 

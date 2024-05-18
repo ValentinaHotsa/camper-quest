@@ -8,11 +8,12 @@ import {
   CheckboxWrap,
   FormFilterRadio,
   RadioWrap,
+  AsStick,
 } from "./AsideFilterStyles";
 import svg from "../../assets/icons.svg";
 const AsideFilter = () => {
   return (
-    <>
+    <AsStick>
       <AsideContainer>
         <FormLocation>
           <label>Location</label>
@@ -106,7 +107,7 @@ const AsideFilter = () => {
         </FormFilterRadio>
         <Button>Search</Button>
       </AsideContainer>
-    </>
+    </AsStick>
   );
 };
 

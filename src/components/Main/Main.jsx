@@ -21,7 +21,7 @@ const Main = () => {
     <HomeSection>
       <HeroContainer>
         <Title>
-          Welcome to CamperRental, where adventure meets comfort on the open
+          Welcome to CamperQuest, where adventure meets comfort on the open
           road!
         </Title>
       </HeroContainer>
@@ -32,11 +32,11 @@ const Main = () => {
             <Image src={subtitle} alt="family in the camper"></Image>
           </ImgThumb>
           <SubTitle>
-            At CamperRental, we're passionate about providing you with the
-            ultimate road-tripping experience. Whether you're planning a family
-            vacation, a weekend getaway with friends, or a solo adventure, our
-            fleet of top-quality campers is ready to accompany you on your
-            journey.
+            At <span>Camper</span>Quest, we're passionate about providing you
+            with the ultimate road-tripping experience. Whether you're planning
+            a family vacation, a weekend getaway with friends, or a solo
+            adventure, our fleet of top-quality campers is ready to accompany
+            you on your journey.
           </SubTitle>
         </DescriptionContainer>
       </DescriptionSection>

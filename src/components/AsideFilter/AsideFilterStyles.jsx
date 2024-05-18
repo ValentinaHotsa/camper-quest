@@ -1,8 +1,15 @@
 import styled from "@emotion/styled";
 import { theme } from "../../styles/root";
 export const AsideContainer = styled.aside`
+  height: 800px;
+`;
+export const AsStick = styled.div`
   float: left;
   margin: 0 auto;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 73px;
+  height: 500px;
 
   @media screen and (min-width: ${theme.breakpoint.tablet}) {
   }

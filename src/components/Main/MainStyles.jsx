@@ -3,20 +3,18 @@ import { theme } from "../../styles/root";
 import imgHero from "../../assets/hero/hero.jpg";
 
 export const HomeSection = styled.main`
+  flex-grow: 1;
   min-width: 320px;
-  max-width: 396px;
-  margin: 0 auto;
 
   @media screen and (min-width: ${theme.breakpoint.tablet}) {
-    max-width: 768px;
+    // max-width: 768px;
   }
 
   @media screen and (min-width: ${theme.breakpoint.desktop}) {
-    max-width: 1158px;
+    // max-width: 1158px;
   }
 `;
 export const HeroContainer = styled.section`
-  max-width: 1440px;
   margin: 0 auto;
   background-color: ${theme.colors.gray};
   background-image: linear-gradient(
@@ -32,12 +30,9 @@ export const HeroContainer = styled.section`
   background-size: cover;
 
   @media screen and (min-width: ${theme.breakpoint.tablet}) {
-    // padding: 110px 0;
     padding: 10% 0;
   }
   @media screen and (min-width: ${theme.breakpoint.desktop}) {
-    max-width: 1440px;
-    // padding: 124px 0;
     padding: 8% 0;
   }
 `;
@@ -51,6 +46,10 @@ export const Title = styled.h1`
   margin: 0 auto;
   color: ${theme.colors.white};
   text-shadow: 1px 1px 23px rgba(200, 200, 200, 0.7);
+  span {
+    color: ${theme.colors.red};
+    text-shadow: none;
+  }
 
   @media screen and (min-width: ${theme.breakpoint.tablet}) {
     width: 600px;
@@ -86,7 +85,7 @@ export const Navigation = styled.ul`
   gap: 15px;
   justify-content: center;
   a {
-    color: ${theme.colors.black};
+    color: ${theme.colors.gray};
   }
   & a:hover {
     color: ${theme.colors.red};
@@ -106,11 +105,14 @@ export const Navigation = styled.ul`
 `;
 
 export const DescriptionSection = styled.section`
+  max-width: 396px;
   padding-left: 16px;
   padding-right: 16px;
   background-color: ${theme.colors.gray};
+  margin: 0 auto;
 
   @media screen and (min-width: ${theme.breakpoint.tablet}) {
+    max-width: 768px;
   }
   @media screen and (min-width: ${theme.breakpoint.desktop}) {
     max-width: 1440px;
@@ -168,6 +170,9 @@ export const SubTitle = styled.h2`
   text-align: left;
   padding: 20px;
   width: 190px;
+  span {
+    color: ${theme.colors.red};
+  }
 
   @media screen and (min-width: ${theme.breakpoint.tablet}) {
     font-size: 30px;

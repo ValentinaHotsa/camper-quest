@@ -3,7 +3,12 @@ import { useCallback } from "react";
 import { useDispatch } from "react-redux";
 import { selectFavorites } from "../../redux/adverts/selectors";
 import { removeFromFavorite } from "../../redux/adverts/advertsSlice";
-
+import { CamperCard } from "../CamperCard/CamperCard";
+import {
+  FavoritesList,
+  FavoritesWrapper,
+  FavoritesTitle,
+} from "./FavoritesStyled";
 const Favorites = () => {
   const dispatch = useDispatch();
   const favorite = useSelector(selectFavorites);
@@ -15,18 +20,22 @@ const Favorites = () => {
     [dispatch]
   );
   return (
-    <>
-      <h1>Favorite list</h1>
+    <FavoritesWrapper>
+      <FavoritesTitle>
+        Your Saved <span>Camper</span> Choices
+      </FavoritesTitle>
       {favorite.length === 0 ? (
         <h3>no favorites</h3>
       ) : (
-        <ul>
+        <FavoritesList>
           {favorite.map((camper) => (
-            <li key={camper._id}>{camper.name}</li>
+            <li key={camper._id}>
+              <CamperCard data={camper} />
+            </li>
           ))}
-        </ul>
+        </FavoritesList>
       )}
-    </>
+    </FavoritesWrapper>
   );
 };
 
