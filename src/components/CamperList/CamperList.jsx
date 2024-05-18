@@ -12,6 +12,7 @@ import { fetchAllAdverts } from "../../redux/adverts/advertsOperations";
 import { List, CatalogWrap } from "./CamperListStyled";
 import LoadMoreBtn from "../LoadMore/LoadMore";
 import { setPage } from "../../redux/adverts/advertsSlice";
+import Loader from "../Loader/Loader";
 
 const CamperList = () => {
   const adverts = useSelector(selectAdverts);
@@ -26,7 +27,7 @@ const CamperList = () => {
   }, [dispatch]);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loader />;
   } else if (error) {
     return <div>Error: {error}</div>;
   } else {
