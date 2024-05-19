@@ -1,7 +1,7 @@
 import { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 import Loader from "./Loader/Loader";
-
+import NotFound from "../pages/PageNotFound/PageNotFound";
 const Home = lazy(() => import("../pages/HomePage/HomePage"));
 
 const CatalogPage = lazy(() => import("../pages/CatalogPage/CatalogPage"));
@@ -19,8 +19,8 @@ const App = () => {
           <Route path="catalog" element={<CatalogPage />} />
           <Route path="catalog/:movieId" element={<CatalogPage />}></Route>
           <Route path="favorite" element={<Favorite />} />
-          <Route path="*" element={<h1>Error</h1>} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>
   );
