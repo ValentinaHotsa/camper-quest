@@ -6,16 +6,16 @@ export const AsideContainer = styled.aside`
 export const AsStick = styled.div`
   float: left;
   margin: 0 auto;
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
   top: 73px;
-  height: 500px;
 
   @media screen and (min-width: ${theme.breakpoint.tablet}) {
   }
   @media screen and (min-width: ${theme.breakpoint.desktop}) {
+    position: -webkit-sticky;
+    position: sticky;
     width: 360px;
     margin: 0;
+    height: 500px;
   }
 `;
 export const FormLocation = styled.form`

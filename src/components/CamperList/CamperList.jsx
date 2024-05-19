@@ -15,7 +15,7 @@ import { setPage } from "../../redux/adverts/advertsSlice";
 import Loader from "../Loader/Loader";
 
 const CamperList = () => {
-  const adverts = useSelector(selectAdverts);
+  const adverts = useSelector(selectAdverts) || [];
   const pageLimit = useSelector(selectPageLimit);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
@@ -34,10 +34,13 @@ const CamperList = () => {
     return (
       <CatalogWrap>
         <List>
-          {adverts.length > 0 &&
+          {adverts.length > 0 ? (
             adverts.map((advert) => (
               <CamperCard key={advert._id} data={advert} />
-            ))}
+            ))
+          ) : (
+            <div>No adverts available</div>
+          )}
         </List>
         <LoadMoreBtn />
       </CatalogWrap>

@@ -11,25 +11,30 @@ import {
   REGISTER,
 } from "redux-persist";
 import { advertsReducer } from "./adverts/advertsSlice";
-
-export const handlePending = (state) => {
-  state.isLoading = true;
-  state.error = null;
+const customReconciler = (
+  inboundState,
+  originalState,
+  reducedState,
+  { debug }
+) => {
+  const newState = {
+    ...reducedState,
+    adverts: {
+      ...reducedState.adverts,
+      adverts: Array.isArray(inboundState?.adverts?.adverts)
+        ? inboundState.adverts.adverts
+        : [],
+    },
+  };
+  return newState;
 };
 
-export const handleFulfilled = (state) => {
-  state.isLoading = false;
-  state.error = null;
-};
-
-export const handleReject = (state, action) => {
-  state.loading = false;
-  state.error = action.payload;
-};
 const persistConfig = {
   key: "root",
   storage,
+  stateReconciler: customReconciler,
 };
+
 const rootReducer = combineReducers({
   adverts: advertsReducer,
 });

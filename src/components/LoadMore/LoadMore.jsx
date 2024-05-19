@@ -4,6 +4,7 @@ import {
   selectAdverts,
   selectPageLimit,
   selectPage,
+  selectTotalAdverts,
 } from "../../redux/adverts/selectors";
 import { fetchAllAdverts } from "../../redux/adverts/advertsOperations";
 import { LoadMore } from "./LoadMoreStyles";
@@ -14,7 +15,7 @@ const LoadMoreBtn = () => {
   const adverts = useSelector(selectAdverts);
   const page = useSelector(selectPage);
   const pageLimit = useSelector(selectPageLimit);
-  // const buttonRef = useRef(null);
+  const totalAdverts = useSelector(selectTotalAdverts);
 
   const handleLoadMore = (event) => {
     event.preventDefault();
@@ -24,18 +25,14 @@ const LoadMoreBtn = () => {
 
     dispatch(setPage(nextPage));
     dispatch(fetchAllAdverts({ page: nextPage, limit: pageLimit, offset }));
-    // buttonRef.current.focus();
   };
+  const allAdvertsLoaded = adverts.length >= totalAdverts;
   return (
-    <>
+    !allAdvertsLoaded && (
       <LoadMore type="button" onClick={handleLoadMore}>
         Load more
       </LoadMore>
-    </>
+    )
   );
 };
 export default LoadMoreBtn;
-
-//  <LoadMore type="button" onClick={handleLoadMore} ref={buttonRef}>
-//    Load more
-//  </LoadMore>;

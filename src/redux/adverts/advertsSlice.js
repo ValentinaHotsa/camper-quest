@@ -11,8 +11,10 @@ const handleFulfilled = (state) => {
 };
 
 const handleReject = (state, action) => {
-  state.loading = false;
+  console.log("Fetch failed:", action.payload);
+  state.isloading = false;
   state.error = action.payload;
+  state.adverts = state.adverts || [];
 };
 
 const initialState = {
