@@ -15,7 +15,6 @@ const LoadMoreBtn = () => {
   const adverts = useSelector(selectAdverts);
   const page = useSelector(selectPage);
   const pageLimit = useSelector(selectPageLimit);
-  const totalAdverts = useSelector(selectTotalAdverts);
 
   const handleLoadMore = (event) => {
     event.preventDefault();
@@ -26,9 +25,9 @@ const LoadMoreBtn = () => {
     dispatch(setPage(nextPage));
     dispatch(fetchAllAdverts({ page: nextPage, limit: pageLimit, offset }));
   };
-  const allAdvertsLoaded = adverts.length >= totalAdverts;
+  const hasMoreAdverts = adverts.length % pageLimit === 0 && adverts.length > 0;
   return (
-    !allAdvertsLoaded && (
+    hasMoreAdverts && (
       <LoadMore type="button" onClick={handleLoadMore}>
         Load more
       </LoadMore>

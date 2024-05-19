@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { Header, Navigation } from "../Main/MainStyles";
 import Footer from "../Footer/Footer";
+import Loader from "../Loader/Loader";
 const SharedLayout = () => {
   return (
     <>
@@ -13,7 +14,7 @@ const SharedLayout = () => {
           <NavLink to="/favorite">Favorite</NavLink>
         </Navigation>
       </Header>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
       <Footer />

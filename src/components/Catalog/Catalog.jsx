@@ -4,8 +4,8 @@ import { CatalogContainer } from "./CatalogStyles";
 const Catalog = () => {
   return (
     <CatalogContainer>
-      <AsideFilter></AsideFilter>
-      <CamperList></CamperList>
+      <AsideFilter />
+      <CamperList />
     </CatalogContainer>
   );
 };
