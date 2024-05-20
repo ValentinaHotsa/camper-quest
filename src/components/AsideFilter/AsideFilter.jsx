@@ -74,7 +74,7 @@ const AsideFilter = () => {
           </label>
         </FormFilter>
 
-        <TitleList>Vehicle equipment</TitleList>
+        <TitleList>Vehicle type</TitleList>
 
         <FormFilterRadio>
           <label>
