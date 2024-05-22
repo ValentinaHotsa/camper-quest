@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import {
   selectAdverts,
   selectError,
+  selectFilteredAdverts,
   selectIsLoading,
 } from "../../redux/adverts/selectors";
 import { CamperCard } from "../CamperCard/CamperCard";
@@ -13,7 +14,7 @@ import LoadMoreBtn from "../LoadMore/LoadMore";
 import Loader from "../Loader/Loader";
 
 const CamperList = () => {
-  const adverts = useSelector(selectAdverts) || [];
+  const adverts = useSelector(selectFilteredAdverts) || [];
 
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
@@ -23,6 +24,7 @@ const CamperList = () => {
   useEffect(() => {
     dispatch(fetchAllAdverts());
   }, [dispatch]);
+
   const handleLoadMore = () => {
     setVisibleAdverts((prev) => prev + 4);
   };

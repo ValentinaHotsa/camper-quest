@@ -19,15 +19,15 @@ const handleReject = (state, action) => {
 
 const initialState = {
   adverts: [],
+  filteredAdverts: [],
+  favorites: [],
   isLoading: false,
   error: null,
-  favorites: [],
 };
 
 const advertsSlice = createSlice({
   name: "adverts",
   initialState,
-
   reducers: {
     clearAdverts: (state) => {
       state.adverts = [];
@@ -47,6 +47,40 @@ const advertsSlice = createSlice({
         (advert) => advert._id !== advertToRemove._id
       );
     },
+    applyFilters(state, action) {
+      const { location, equipment, vehicleType } = action.payload;
+      console.log("Applying filters with:", {
+        location,
+        equipment,
+        vehicleType,
+      });
+      state.filteredAdverts = state.adverts.filter((advert) => {
+        const matchesLocation = location
+          ? advert.location.includes(location)
+          : true;
+        const matchesEquipment =
+          equipment.length > 0
+            ? equipment.every((item) => {
+                if (item === "automatic") {
+                  return advert.transmission === "automatic";
+                }
+
+                return advert.details[item];
+              })
+            : true;
+        const matchesVehicleType = vehicleType
+          ? advert.form === vehicleType
+          : true;
+        console.log("Checking advert:", advert);
+        console.log("Matches:", {
+          matchesLocation,
+          matchesEquipment,
+          matchesVehicleType,
+        });
+        return matchesLocation && matchesEquipment && matchesVehicleType;
+      });
+      console.log("Filtered Adverts:", state.filteredAdverts);
+    },
   },
 
   extraReducers: (builder) => {
@@ -56,6 +90,7 @@ const advertsSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         state.adverts = action.payload;
+        state.filteredAdverts = action.payload;
       })
       .addCase(fetchAllAdverts.rejected, handleReject)
 
@@ -67,6 +102,6 @@ const advertsSlice = createSlice({
       );
   },
 });
-export const { setPage, addToFavorite, removeFromFavorite } =
+export const { setPage, addToFavorite, removeFromFavorite, applyFilters } =
   advertsSlice.actions;
 export const advertsReducer = advertsSlice.reducer;

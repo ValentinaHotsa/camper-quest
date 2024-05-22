@@ -3,3 +3,4 @@ export const selectFavorites = (state) => state.adverts.favorites;
 export const selectIsLoading = (state) => state.adverts.isLoading;
 export const selectError = (state) => state.adverts.error;
 export const selectTotalAdverts = (state) => state.adverts.total;
+export const selectFilteredAdverts = (state) => state.adverts.filteredAdverts;

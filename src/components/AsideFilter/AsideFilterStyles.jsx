@@ -42,11 +42,10 @@ export const FormLocation = styled.form`
     border: none;
     background: rgb(247, 247, 247);
     padding-left: 44px;
-    padding-bottom:18px;
-    padding-top:18px;
-  outline:none;
-
-  paddin}
+    padding-bottom: 18px;
+    padding-top: 18px;
+    outline: none;
+  }
   svg {
     width: 18px;
     height: 20px;
@@ -57,10 +56,8 @@ export const FormLocation = styled.form`
     top: 50px;
     left: 18px;
   }
-   @media screen and (min-width: ${theme.breakpoint.tablet}) {
-
-  width: 360px;
-
+  @media screen and (min-width: ${theme.breakpoint.tablet}) {
+    width: 360px;
   }
 `;
 
@@ -143,6 +140,9 @@ export const CheckboxWrap = styled.div`
     fill: transparent;
     stroke: #101828;
   }
+  input:checked + & {
+    border-color: rgb(216, 67, 67);
+  }
 `;
 export const FormFilterRadio = styled.form`
   display: flex;
@@ -185,6 +185,9 @@ export const RadioWrap = styled.div`
     height: 30px;
     fill: transparent;
     stroke: #101828;
+  }
+  input:checked + & {
+    border-color: rgb(216, 67, 67);
   }
   @media screen and (min-width: ${theme.breakpoint.tablet}) {
     width: 110px;
