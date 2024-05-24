@@ -1,4 +1,6 @@
 import styled from "@emotion/styled";
+import { theme } from "../../styles/root";
+
 export const Popup = styled.div`
   position: fixed;
   display: flex;
@@ -15,6 +17,7 @@ export const Popup = styled.div`
   transition: opacity 0.3s;
   overflow: auto;
 `;
+
 export const ModalWrapper = styled.div`
   position: absolute;
   top: 50%;
@@ -24,28 +27,10 @@ export const ModalWrapper = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 50px;
-
-  // ::-webkit-scrollbar {
-  //   width: 8px;
-  // }
-
-  // ::-webkit-scrollbar-track {
-  //   background-color: transparent;
-  //   width: 2px;
-  //   margin: 0 auto;
-  //   border-radius: 3px;
-  // }
-
-  // ::-webkit-scrollbar-thumb {
-  //   width: 8px;
-  //   border-radius: 7px;
-  //   height: 264px;
-  //   background-color: rgb(21, 21, 21);
-  // }
-
   scrollbar-color: transparent transparent;
   scrollbar-width: none;
 `;
+
 export const ModalContent = styled.div`
   position: absolute;
   padding: 40px;
@@ -60,21 +45,20 @@ export const ModalContent = styled.div`
   overflow: auto;
   max-width: 984px;
 `;
-export const CloseButton = styled.button`
 
+export const CloseButton = styled.button`
   display: block;
   border: none;
   background-color: transparent;
   padding: 0px;
   cursor: pointer;
-  text-align:center;
- width: 32px;
-    height: 32px;
-    svg {
+  text-align: center;
+  width: 32px;
+  height: 32px;
+
+  svg {
     width: 32px;
     height: 32px;
-   
-  }
   }
 `;
 
@@ -82,9 +66,9 @@ export const TopWrap = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+
 export const TitleCard = styled.h2`
   color: rgb(16, 24, 40);
-  font-family: Inter;
   font-size: 24px;
   font-weight: 600;
   line-height: 30px;
@@ -92,6 +76,7 @@ export const TitleCard = styled.h2`
   text-align: left;
   margin: 6px 0;
 `;
+
 export const RevLocWraper = styled.div`
   display: flex;
   gap: 18px;
@@ -99,52 +84,52 @@ export const RevLocWraper = styled.div`
 `;
 
 export const Rating = styled.p`
-  color: rgb(16, 24, 40);
-  font-family: Inter;
+  color: ${theme.colors.black};
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
   text-align: left;
   text-decoration-line: underline;
+
   svg {
     width: 16px;
     height: 16px;
-    fill: #ffc531;
-    stroke: #ffc531;
+    fill: ${theme.colors.yellow};
+    stroke: ${theme.colors.yellow};
   }
 `;
 
 export const Location = styled.p`
-  color: rgb(16, 24, 40);
-  font-family: Inter;
+  color: ${theme.colors.black};
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0%;
   margin: 0;
   text-align: left;
+
   svg {
     width: 16px;
     height: 16px;
     fill: transparent;
-    stroke: #101828;
+    stroke: ${theme.colors.black};
   }
 `;
 
 export const Price = styled.div`
-  color: rgb(16, 24, 40);
-  font-family: Inter;
+  color: ${theme.colors.black};
   font-size: 24px;
   font-weight: 600;
   line-height: 30px;
   letter-spacing: 0%;
   text-align: left;
   margin-top: 24px;
+
   svg {
     width: 20px;
     height: 20px;
     fill: transparent;
-    stroke: #101828;
+    stroke: ${theme.colors.black};
   }
 `;
 
@@ -154,9 +139,11 @@ export const ImgList = styled.div`
   flex-direction: row;
   gap: 16px;
 `;
+
 export const ImgThumb = styled.div`
   width: 290px;
   height: 310px;
+
   img {
     width: 100%;
     height: 100%;
@@ -170,9 +157,10 @@ export const Description = styled.p`
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
-  color: rgb(71, 84, 103);
+  color: ${theme.colors.gray};
   margin-top: 24px;
 `;
+
 export const TabWraper = styled.div`
   margin-top: 44px;
   display: flex;
@@ -181,16 +169,16 @@ export const TabWraper = styled.div`
   border-bottom: 1px solid rgba(16, 24, 40, 0.2);
   padding-bottom: 24px;
 `;
+
 export const Button = styled.button`
-  color: rgb(16, 24, 40);
-  font-family: Inter;
+  color: ${theme.colors.black};
   font-size: 20px;
   font-weight: 600;
   line-height: 24px;
-  // height: 24px;
   border: none;
   background-color: transparent;
   position: relative;
+
   ${({ active }) =>
     active &&
     `
@@ -202,19 +190,21 @@ export const Button = styled.button`
      top: 48px;
      width: 100%;
      height: 5px;
-     background-color: rgb(228, 72, 72);
+     background-color: ${theme.colors.red};
     }
-     
     `}
 `;
+
 export const TabContent = styled.div`
   display: flex;
   margin-top: 44px;
   gap: 24px;
 `;
+
 export const LeftWrap = styled.div`
   width: 430px;
 `;
+
 export const RightWrap = styled.div`
   padding: 24px;
   width: 448px;

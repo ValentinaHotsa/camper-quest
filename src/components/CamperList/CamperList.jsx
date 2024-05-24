@@ -1,8 +1,6 @@
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import {
-  selectAdverts,
   selectError,
   selectFilteredAdverts,
   selectIsLoading,
@@ -15,7 +13,6 @@ import Loader from "../Loader/Loader";
 
 const CamperList = () => {
   const adverts = useSelector(selectFilteredAdverts) || [];
-
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
   const dispatch = useDispatch();

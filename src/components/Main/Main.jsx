@@ -2,9 +2,6 @@ import {
   HomeSection,
   Title,
   SubTitle,
-  AboutContainer,
-  AboutTitle,
-  BenefitsList,
   HeroContainer,
   DescriptionContainer,
   DescriptionSection,
@@ -12,7 +9,6 @@ import {
   Image,
 } from "./MainStyles";
 import subtitle from "../../assets/hero/subtitle.jpg";
-
 import Benefits from "./Benefits/Benefits";
 import FinalTitle from "./FinalTitle/FinalTitle";
 
@@ -40,35 +36,8 @@ const Main = () => {
           </SubTitle>
         </DescriptionContainer>
       </DescriptionSection>
-      <FinalTitle />
 
-      {/* <AboutContainer> */}
-      {/* <AboutTitle>Why choose us?</AboutTitle> */}
-      {/* <BenefitsList>
-          <li>
-            We pride ourselves on offering more than just a vehicle rental
-            service; we deliver an unforgettable travel experience.
-          </li>
-          <li>
-            Our campers are meticulously maintained and equipped with all the
-            amenities you need for a comfortable and convenient trip.{" "}
-          </li>
-          <li>
-            With CamperRental, you have the freedom to explore at your own pace,
-            discovering hidden gems and scenic landscapes along the way.
-          </li>
-          <li>
-            We understand that every traveler is unique, which is why we offer
-            flexible rental options and personalized customer service to ensure
-            your trip exceeds expectations.
-          </li>
-          <li>
-            Our team is here to assist you every step of the way, from selecting
-            the perfect camper for your needs to providing tips and
-            recommendations for your itinerary.
-          </li>
-        </BenefitsList> */}
-      {/* </AboutContainer> */}
+      <FinalTitle />
     </HomeSection>
   );
 };

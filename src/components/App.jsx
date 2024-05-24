@@ -2,8 +2,8 @@ import { Suspense, lazy } from "react";
 import { Route, Routes } from "react-router-dom";
 import Loader from "./Loader/Loader";
 import NotFound from "../pages/PageNotFound/PageNotFound";
-const Home = lazy(() => import("../pages/HomePage/HomePage"));
 
+const Home = lazy(() => import("../pages/HomePage/HomePage"));
 const CatalogPage = lazy(() => import("../pages/CatalogPage/CatalogPage"));
 const Favorite = lazy(() => import("../pages/FavoritePage/FavoritePage"));
 const SharedLayout = lazy(() =>
@@ -25,4 +25,5 @@ const App = () => {
     </Suspense>
   );
 };
+
 export default App;

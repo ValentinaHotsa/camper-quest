@@ -1,31 +1,26 @@
 import { useSelector } from "react-redux";
-import { useCallback } from "react";
-import { useDispatch } from "react-redux";
+import { NavLink } from "react-router-dom";
 import { selectFavorites } from "../../redux/adverts/selectors";
-import { removeFromFavorite } from "../../redux/adverts/advertsSlice";
 import { CamperCard } from "../CamperCard/CamperCard";
 import {
   FavoritesList,
   FavoritesWrapper,
   FavoritesTitle,
 } from "./FavoritesStyled";
+
 const Favorites = () => {
-  const dispatch = useDispatch();
   const favorite = useSelector(selectFavorites);
 
-  const removeFavorite = useCallback(
-    (advert) => {
-      dispatch(removeFromFavorite(advert));
-    },
-    [dispatch]
-  );
   return (
     <FavoritesWrapper>
       <FavoritesTitle>
         Your Saved <span>Camper</span> Choices
       </FavoritesTitle>
       {favorite.length === 0 ? (
-        <h3>no favorites</h3>
+        <h3>
+          No favorites. Go to the <NavLink to="/catalog">Catalog</NavLink> and
+          add the camper to your favorites.
+        </h3>
       ) : (
         <FavoritesList>
           {favorite.map((camper) => (

@@ -9,8 +9,7 @@ export const CatalogContainer = styled.div`
   flex-direction: column;
   gap: 64px;
   justify-content: center;
-  @media screen and (min-width: ${theme.breakpoint.tablet}) {
-  }
+
   @media screen and (min-width: ${theme.breakpoint.desktop}) {
     flex-direction: row;
     gap: 64px;

@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import svg from "../../assets/icons.svg";
-
 import {
   DropdownContainer,
   DropdownHeader,
@@ -12,6 +11,11 @@ import {
 const Dropdown = ({ options, selectedOption, setSelectedOption }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const handleSelectOption = (option) => {
+    setSelectedOption(option);
+    setIsOpen(false);
+  };
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -23,10 +27,7 @@ const Dropdown = ({ options, selectedOption, setSelectedOption }) => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-  const handleSelectOption = (option) => {
-    setSelectedOption(option);
-    setIsOpen(false);
-  };
+
   return (
     <DropdownContainer ref={dropdownRef}>
       <DropdownHeader onClick={() => setIsOpen(!isOpen)}>

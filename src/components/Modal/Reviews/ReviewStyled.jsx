@@ -26,7 +26,6 @@ export const Avatar = styled.div`
   border-radius: 60px;
   background-color: ${theme.colors.lightGray};
   color: ${theme.colors.red};
-  font-family: Inter;
   font-size: 24px;
   font-weight: 600;
   line-height: 30px;
@@ -35,35 +34,25 @@ export const Avatar = styled.div`
   align-items: center;
 `;
 
-export const NameWraper = styled.div``;
-
 export const UserName = styled.h3`
   color: ${theme.colors.black};
-  font-family: Inter;
   font-size: 18px;
   font-weight: 600;
   line-height: 24px;
 `;
 
-// export const Rating = styled.div`
-//   font-size: 24px;
-// `;
-
 export const ReviewText = styled.p`
   color: ${theme.colors.gray};
-  font-family: Inter;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
 `;
 
-export const StarContainer = styled.div``;
-
 export const StarFilled = styled.svg`
   width: 16px;
   height: 16px;
-  fill: #ffc531;
-  stroke: #ffc531;
+  fill: ${theme.colors.yellow};
+  stroke: ${theme.colors.yellow};
 `;
 
 export const StarEmpty = styled.svg`

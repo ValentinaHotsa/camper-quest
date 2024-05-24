@@ -1,12 +1,12 @@
+import svg from "../../../assets/icons.svg";
+
 import {
   BenefitsContainer,
-  BenefitsItem,
   BenefitsList,
   BenefitsSection,
   ItemContainer,
 } from "./BenefitsStyles";
 
-import svg from "../../../assets/icons.svg";
 const Benefits = () => {
   return (
     <BenefitsSection>

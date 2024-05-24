@@ -5,6 +5,7 @@ const handlePending = (state) => {
   state.isLoading = true;
   state.error = null;
 };
+
 const handleFulfilled = (state) => {
   state.isLoading = false;
   state.error = null;
@@ -48,7 +49,6 @@ const advertsSlice = createSlice({
     },
     applyFilters(state, action) {
       const { location, equipment, vehicleType } = action.payload;
-
       state.filteredAdverts = state.adverts.filter((advert) => {
         const matchesLocation = location
           ? advert.location.includes(location)
@@ -66,15 +66,8 @@ const advertsSlice = createSlice({
         const matchesVehicleType = vehicleType
           ? advert.form === vehicleType
           : true;
-        console.log("Checking advert:", advert);
-        console.log("Matches:", {
-          matchesLocation,
-          matchesEquipment,
-          matchesVehicleType,
-        });
         return matchesLocation && matchesEquipment && matchesVehicleType;
       });
-      console.log("Filtered Adverts:", state.filteredAdverts);
     },
   },
 
@@ -99,4 +92,5 @@ const advertsSlice = createSlice({
 });
 export const { setPage, addToFavorite, removeFromFavorite, applyFilters } =
   advertsSlice.actions;
+
 export const advertsReducer = advertsSlice.reducer;

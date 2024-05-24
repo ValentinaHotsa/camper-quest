@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { Header, Navigation } from "../Main/MainStyles";
 import Footer from "../Footer/Footer";
 import Loader from "../Loader/Loader";
+
 const SharedLayout = () => {
   return (
     <>

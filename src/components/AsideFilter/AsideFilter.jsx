@@ -1,3 +1,8 @@
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { applyFilters } from "../../redux/adverts/advertsSlice";
+import { selectAdverts } from "../../redux/adverts/selectors";
+import Dropdown from "./Dropdown.jsx";
 import {
   AsideContainer,
   FormLocation,
@@ -11,11 +16,7 @@ import {
   AsStick,
 } from "./AsideFilterStyles";
 import svg from "../../assets/icons.svg";
-import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { applyFilters } from "../../redux/adverts/advertsSlice";
-import { selectAdverts } from "../../redux/adverts/selectors";
-import Dropdown from "./Dropdown.jsx";
+
 
 const iconMapping = {
   AC: "icon-ac",
@@ -69,6 +70,7 @@ const AsideFilter = () => {
     e.preventDefault();
     dispatch(applyFilters({ location, equipment, vehicleType }));
   };
+  
   return (
     <AsStick>
       <AsideContainer>

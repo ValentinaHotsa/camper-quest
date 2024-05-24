@@ -19,7 +19,6 @@ const Features = ({ data }) => {
     details,
     engine,
     transmission,
-    _id,
   } = data;
   return (
     <>

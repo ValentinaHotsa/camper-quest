@@ -1,5 +1,6 @@
 import { ContainerFooter, IconWrap } from "./FooterStyled";
 import svg from "../../assets/icons.svg";
+
 const Footer = () => {
   return (
     <ContainerFooter>

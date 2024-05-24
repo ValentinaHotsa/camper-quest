@@ -2,7 +2,6 @@ import {
   ReviewTab,
   LoginWraper,
   Avatar,
-  NameWraper,
   UserName,
   ReviewText,
   ReviewsContainer,
@@ -18,12 +17,12 @@ const Review = ({ data }) => {
         <ReviewTab key={index}>
           <LoginWraper>
             <Avatar>{review.reviewer_name.charAt(0)}</Avatar>
-            <NameWraper>
+            <div>
               <UserName>{review.reviewer_name}</UserName>
               <Rating rating={review.reviewer_rating}>
                 {review.reviewer_rating}
               </Rating>
-            </NameWraper>
+            </div>
           </LoginWraper>
           <ReviewText>{review.comment}</ReviewText>
         </ReviewTab>

@@ -9,7 +9,6 @@ export const fetchAllAdverts = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const { data } = await axios.get(`/advert/`);
-
       return data;
     } catch (error) {
       console.log(error);
