@@ -11,9 +11,11 @@ import {
   AsStick,
 } from "./AsideFilterStyles";
 import svg from "../../assets/icons.svg";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { applyFilters } from "../../redux/adverts/advertsSlice";
+import { selectAdverts } from "../../redux/adverts/selectors";
+import Dropdown from "./Dropdown.jsx";
 
 const iconMapping = {
   AC: "icon-ac",
@@ -39,9 +41,16 @@ const displayNames = {
 
 const AsideFilter = () => {
   const [location, setLocation] = useState("");
+  const [cities, setCities] = useState([]);
   const [equipment, setEquipment] = useState([]);
   const [vehicleType, setVehicleType] = useState("");
+  const adverts = useSelector(selectAdverts);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const uniqueCities = [...new Set(adverts.map((advert) => advert.location))];
+    setCities(uniqueCities);
+  }, [adverts]);
 
   const handleCheckboxChange = (e) => {
     const { value, checked } = e.target;
@@ -51,9 +60,11 @@ const AsideFilter = () => {
       setEquipment(equipment.filter((item) => item !== value));
     }
   };
+
   const handleRadioChange = (e) => {
     setVehicleType(e.target.value);
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(applyFilters({ location, equipment, vehicleType }));
@@ -62,14 +73,12 @@ const AsideFilter = () => {
     <AsStick>
       <AsideContainer>
         <FormLocation>
-          <label>Location</label>
-          <input
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
+          <label htmlFor="city">Location</label>
+          <Dropdown
+            options={cities}
+            selectedOption={location}
+            setSelectedOption={setLocation}
           />
-          <svg>
-            <use href={`${svg}#icon-map-pin`}></use>
-          </svg>
         </FormLocation>
 
         <TitlePage>Filters</TitlePage>

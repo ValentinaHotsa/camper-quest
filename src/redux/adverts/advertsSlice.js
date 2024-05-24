@@ -11,7 +11,6 @@ const handleFulfilled = (state) => {
 };
 
 const handleReject = (state, action) => {
-  console.log("Fetch failed:", action.payload);
   state.isloading = false;
   state.error = action.payload;
   state.adverts = state.adverts || [];
@@ -49,11 +48,7 @@ const advertsSlice = createSlice({
     },
     applyFilters(state, action) {
       const { location, equipment, vehicleType } = action.payload;
-      console.log("Applying filters with:", {
-        location,
-        equipment,
-        vehicleType,
-      });
+
       state.filteredAdverts = state.adverts.filter((advert) => {
         const matchesLocation = location
           ? advert.location.includes(location)

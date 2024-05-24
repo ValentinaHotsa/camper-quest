@@ -3,7 +3,6 @@ import { theme, br } from "../../styles/root";
 
 export const ContainerFooter = styled.footer`
   padding: 20px 0;
-
   background-color: ${theme.colors.gray};
   color: ${theme.colors.white};
   font-size: 18px;

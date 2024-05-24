@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { theme } from "../../styles/root";
 export const AsideContainer = styled.aside`
-  height: 800px;
+  height: 650px;
 `;
 export const AsStick = styled.div`
   float: left;
@@ -15,7 +15,7 @@ export const AsStick = styled.div`
     position: sticky;
     width: 360px;
     margin: 0;
-    height: 500px;
+    height: 650px;
   }
 `;
 export const FormLocation = styled.form`
@@ -28,36 +28,77 @@ export const FormLocation = styled.form`
 
   label {
     color: rgba(16, 24, 40, 0.6);
-    font-family: Inter;
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
   }
-  input {
-    font-family: Inter;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 20px;
-    border-radius: 10px;
-    border: none;
-    background: rgb(247, 247, 247);
-    padding-left: 44px;
-    padding-bottom: 18px;
-    padding-top: 18px;
-    outline: none;
-  }
-  svg {
-    width: 18px;
-    height: 20px;
-    fill: transparent;
-    stroke: #101828;
-    position: absolute;
-    z-index: 1;
-    top: 50px;
-    left: 18px;
-  }
+
   @media screen and (min-width: ${theme.breakpoint.tablet}) {
     width: 360px;
+  }
+`;
+
+export const DropdownContainer = styled.div`
+  position: relative;
+  width: 288px;
+  @media screen and (min-width: ${theme.breakpoint.tablet}) {
+    width: 360px;
+  }
+`;
+export const DropdownHeader = styled.div`
+  font-size: 20px;
+  border-radius: 10px;
+  border: none;
+  color: ${theme.colors.black};
+  background: ${theme.colors.lightGray};
+  padding: 18px;
+  cursor: pointer;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #e0e0e0;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(16, 24, 40, 0.2);
+  }
+`;
+export const DropdownIcon = styled.svg`
+  width: 18px;
+  height: 20px;
+  fill: transparent;
+  stroke: ${theme.colors.black};
+`;
+export const DropdownListContainer = styled.div`
+  position: absolute;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+  border: none;
+  background: ${theme.colors.lightGray};
+  border-radius: 10px;
+  z-index: 1000;
+  margin-top: 3px;
+`;
+export const DropdownList = styled.ul`
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  li {
+    padding: 10px 18px;
+    font-size: 18px;
+    font-family: Inter;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+
+    &:hover {
+      background-color: ${theme.colors.red};
+      color: ${theme.colors.white};
+    }
   }
 `;
 
@@ -94,6 +135,8 @@ export const Button = styled.button`
   font-weight: 500;
   line-height: 24px;
   letter-spacing: -0.5%;
+  transition: background-color 0.3s ease;
+
   &:hover {
     background: rgb(216, 67, 67);
   }
@@ -124,6 +167,8 @@ export const CheckboxWrap = styled.div`
   border: 1px solid rgba(16, 24, 40, 0.2);
   border-radius: 10px;
   cursor: pointer;
+  transition: border-color 0.5s ease;
+
   &:hover {
     border-color: rgb(216, 67, 67);
   }
@@ -170,6 +215,8 @@ export const RadioWrap = styled.div`
   border-radius: 10px;
   gap: 4px;
   cursor: pointer;
+  transition: border-color 0.5s ease;
+
   &:hover {
     border-color: rgb(216, 67, 67);
   }
