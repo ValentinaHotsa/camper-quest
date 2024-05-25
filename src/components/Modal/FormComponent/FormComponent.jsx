@@ -1,11 +1,10 @@
-import { Formik, Field, Form, ErrorMessage } from "formik";
+import { useState } from "react";
+import { Global } from "@emotion/react";
+import { Formik, Field, Form } from "formik";
 import * as Yup from "yup";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import DatePicker from "react-datepicker";
+import swal from "sweetalert";
 import "react-datepicker/dist/react-datepicker.css";
 import svg from "../../../assets/icons.svg";
-
 import {
   TitleForm,
   SubtitleForm,
@@ -17,9 +16,8 @@ import {
   InputField,
   TextareaField,
   FormStyle,
-  ToastContainerStyle,
 } from "./FormComponentStyled";
-import { useState } from "react";
+import { SweetAlertStyles } from "./FormComponentStyled";
 
 const FormComponent = () => {
   const validationSchema = Yup.object().shape({
@@ -37,7 +35,6 @@ const FormComponent = () => {
 
   const [selectedDate, setSelectedDate] = useState(null);
   const handleDateChange = (date, form) => {
-    console.log("Selected Date:", date);
     setSelectedDate(date);
     form.setFieldValue("date", date || "");
   };
@@ -50,25 +47,18 @@ const FormComponent = () => {
   };
 
   const handleSubmit = (values, { setSubmitting, resetForm }) => {
-    toast.success("The booking request has been sent");
+    swal({
+      text: "The booking request has been sent",
+      icon: "success",
+      button: { className: "swal-button" },
+    });
     resetForm();
     setSubmitting(false);
   };
 
   return (
     <>
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
+      <Global styles={SweetAlertStyles} />
       <TitleForm>Book your campervan now</TitleForm>
       <SubtitleForm>
         Stay connected! We are always ready to help you.

@@ -1,70 +1,111 @@
-# Getting Started with Create React App
+# 🛣️ Ukrainian Camper Rental Service - CamperQuest
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+CamperQuest is an app for renting campers in Ukraine. This project is built using React and other modern web technologies. It is intended for practice and to serve as a part of my portfolio. This is not a commercial project.
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+CamperQuest provides a platform for users to browse and rent campers in Ukraine. The app consists of three main pages:
 
-### `npm start`
+```
+- `/` - Home Page: A summary of the company.
+- `/catalog` - Catalog Page: A catalog of available campers with filtering options.
+- `/favorite` - Favorites Page: A list of campers the user has marked as favorites.
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  <img src='/src/assets/readme/favoriteReadme.png'>
 
-### `npm test`
+- Users can add campers to their favorites by clicking the heart icon on the camper cards.
+  <img src='/src/assets/readme/modalReadme.png'>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Clicking the "Show More" button on any camper card opens a modal window with detailed information about the camper, including its description, benefits, reviews, and a booking form.
+  <img src='/src/assets/readme/catalogReadme.png'>
 
-### `npm run build`
+- The catalog page includes filtering options to help users find the camper that best suits their needs.
+- The catalog page implements pagination to efficiently manage and display a large number of camper listings
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To run this project locally, follow these steps:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository:
 
-### `npm run eject`
+```bash
+  git clone https://github.com/ValentinaHotsa/CamperQuest.git
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Install the dependencies:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+npm install
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. Start the development server:
 
-## Learn More
+```
+npm start
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Technologies
 
-### Code Splitting
+- **React:** A JavaScript library for building user interfaces.
+- **React-Redux:** A predictable state container for JavaScript apps.
+- **React-Router:** A collection of navigational components for React applications.
+- **Emotion:** A library designed for writing CSS styles with JavaScript.
+- **Axios:** A promise-based HTTP client for the browser and Node.js.
+- **Formik:** A library for building forms in React.
+- **Lottie-React:** A library for rendering animations in React.
+- **Yup:** A JavaScript schema builder for value parsing and validation.
+- **SweetAlert:** A library for creating beautiful, responsive, customizable pop-up boxes.
+- **Datepicker:** A component for selecting dates.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Author
 
-### Analyzing the Bundle Size
+For more information or if you have any questions, feel free to contact me:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- GitHub [ValentinaHotsa](https://github.com/ValentinaHotsa)
+- LinkedIn [Valentyna Hotsa](https://www.linkedin.com/in/valentynahotsa/)
 
-### Making a Progressive Web App
+# 🛣️ Український сервіс оренди кемперів - CamperQuest
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+CamperQuest — програма для оренди кемперів в Україні. Цей проект побудовано з використанням React та інших сучасних веб-технологій. Він призначений для практики та стане частиною мого портфоліо. Це не комерційний проект.
 
-### Advanced Configuration
+## Огляд
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+CamperQuest надає користувачам платформу для перегляду та оренди кемперів в Україні. Додаток складається з трьох основних сторінок:
 
-### Deployment
+```
+- `/` -  Home Page: короткий опис компанії.
+- `/catalog` - Catalog Page: каталог доступних кемперів з параметрами фільтрації.
+- `/favorite` - Favorites Page: список камперів, які користувач позначив як улюблені.
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Особливості
 
-### `npm run build` fails to minify
+- Користувачі можуть додати кемперів до своїх улюблених, натиснувши значок серця на картках кемперів.
+- Натискання кнопки «Показати більше» на будь-якій картці кемпера відкриває модальне вікно з детальною інформацією про кемпер, включаючи його опис, переваги, відгуки та форму бронювання.
+- Сторінка каталогу містить параметри фільтрації, щоб допомогти користувачам знайти кемпер, який найкраще відповідає їхнім потребам.
+- Сторінка каталогу реалізує розбиття на сторінки для ефективного керування та відображення великої кількості списків кемперів
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Використані технології
+
+- **React:** бібліотека JavaScript для створення інтерфейсів користувача.
+- **React-Redux:** контейнер передбачуваного стану для програм JavaScript.
+- **React-Router:** колекція навігаційних компонентів для програм React
+- **Emotion:** бібліотека, розроблена для написання стилів CSS за допомогою JavaScript.
+- **Axios:** HTTP-клієнт на основі промісів для браузера та Node.js.
+- **Formik:** Бібліотека для створення форм у React.
+- **Lottie-React:** Бібліотека для відтворення анімації в React.
+- **Yup:** конструктор схем JavaScript для аналізу та перевірки значень.
+- **SweetAlert:** бібліотека для створення красивих, адаптивних, настроюваних спливаючих вікон.
+- **Datepicker:** компонент для вибору дат.
+
+## Розробник
+
+Щоб отримати додаткову інформацію або у вас виникли запитання, зв’яжіться зі мною:
+
+- GitHub [ValentinaHotsa](https://github.com/ValentinaHotsa)
+- LinkedIn [Valentyna Hotsa](https://www.linkedin.com/in/valentynahotsa/)

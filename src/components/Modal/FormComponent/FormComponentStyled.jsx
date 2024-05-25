@@ -1,8 +1,28 @@
 import styled from "@emotion/styled";
+import { css } from "@emotion/react";
 import { ErrorMessage, Form } from "formik";
 import DatePicker from "react-datepicker";
 import { theme } from "../../../styles/root";
 
+export const SweetAlertStyles = css`
+  .swal-button {
+    padding: 7px 19px;
+    border-radius: 200px;
+    background-color: ${theme.colors.red};
+    font-size: 12px;
+    border: none;
+    color: ${theme.colors.white};
+    box-shadow: none;
+  }
+
+  .swal-button:not([disabled]):hover,
+  .swal-button:focus,
+  .swal-button:active {
+    background-color: ${theme.colors.redHover};
+    border: none;
+    box-shadow: none;
+  }
+`;
 export const FormStyle = styled(Form)`
   display: flex;
   flex-direction: column;

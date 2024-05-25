@@ -2,13 +2,14 @@ import styled from "@emotion/styled";
 import { theme } from "../../styles/root";
 
 export const AsideContainer = styled.aside`
-  height: 650px;
+  @media screen and (min-width: ${theme.breakpoint.desktop}) {
+    height: 650px;
+  }
 `;
 
 export const AsStick = styled.div`
   float: left;
   margin: 0 auto;
-  top: 73px;
 
   @media screen and (min-width: ${theme.breakpoint.desktop}) {
     position: -webkit-sticky;

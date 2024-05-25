@@ -7,7 +7,7 @@ export const CatalogContainer = styled.div`
   padding-right: 16px;
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  gap: 30px;
   justify-content: center;
 
   @media screen and (min-width: ${theme.breakpoint.desktop}) {

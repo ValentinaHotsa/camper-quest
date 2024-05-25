@@ -17,9 +17,8 @@ import {
 } from "./AsideFilterStyles";
 import svg from "../../assets/icons.svg";
 
-
 const iconMapping = {
-  AC: "icon-ac",
+  airConditioner: "icon-conditioner",
   automatic: "icon-transm",
   kitchen: "icon-kitchen",
   TV: "icon-tv",
@@ -30,7 +29,7 @@ const iconMapping = {
 };
 
 const displayNames = {
-  AC: "AC",
+  airConditioner: "Air conditioner",
   automatic: "Automatic",
   kitchen: "Kitchen",
   TV: "TV",
@@ -70,7 +69,7 @@ const AsideFilter = () => {
     e.preventDefault();
     dispatch(applyFilters({ location, equipment, vehicleType }));
   };
-  
+
   return (
     <AsStick>
       <AsideContainer>
@@ -87,21 +86,23 @@ const AsideFilter = () => {
 
         <TitleList>Vehicle equipment</TitleList>
         <FormFilter>
-          {["AC", "automatic", "kitchen", "TV", "shower"].map((item) => (
-            <label key={item}>
-              <input
-                type="checkbox"
-                value={item}
-                onChange={handleCheckboxChange}
-              />
-              <CheckboxWrap>
-                <svg>
-                  <use href={`${svg}#${iconMapping[item]}`} />
-                </svg>
-                <span> {displayNames[item]}</span>
-              </CheckboxWrap>
-            </label>
-          ))}
+          {["airConditioner", "automatic", "kitchen", "TV", "shower"].map(
+            (item) => (
+              <label key={item}>
+                <input
+                  type="checkbox"
+                  value={item}
+                  onChange={handleCheckboxChange}
+                />
+                <CheckboxWrap>
+                  <svg>
+                    <use href={`${svg}#${iconMapping[item]}`} />
+                  </svg>
+                  <span> {displayNames[item]}</span>
+                </CheckboxWrap>
+              </label>
+            )
+          )}
         </FormFilter>
 
         <TitleList>Vehicle type</TitleList>

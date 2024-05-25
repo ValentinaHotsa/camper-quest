@@ -34,6 +34,7 @@ export const CamperCard = ({ data }) => {
     location,
     reviews,
     rating,
+    kitchen,
     description,
     adults,
     details,
@@ -143,18 +144,31 @@ export const CamperCard = ({ data }) => {
               </svg>
               {details.beds} beds
             </li>
-            <li>
-              <svg>
-                <use href={`${svg}#icon-kitchen`}></use>
-              </svg>
-              Kitchen
-            </li>
-            <li>
-              <svg>
-                <use href={`${svg}#icon-ac`}></use>
-              </svg>
-              AC
-            </li>
+
+            {kitchen > 0 ? (
+              <li>
+                <svg>
+                  <use href={`${svg}#icon-kitchen`}></use>
+                </svg>
+                kitchen
+              </li>
+            ) : null}
+            {details.microwave > 0 ? (
+              <li>
+                <svg>
+                  <use href={`${svg}#icon-microwave`}></use>
+                </svg>
+                Microwave
+              </li>
+            ) : null}
+            {details.radio > 0 ? (
+              <li>
+                <svg>
+                  <use href={`${svg}#icon-radio`}></use>
+                </svg>
+                Radio
+              </li>
+            ) : null}
           </DetailsList>
         </DetailsContainer>
 
