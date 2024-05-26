@@ -34,11 +34,12 @@ const Dropdown = ({ options, selectedOption, setSelectedOption }) => {
         <DropdownIcon>
           <use href={`${svg}#icon-map-pin`}></use>
         </DropdownIcon>
-        {selectedOption || "Choose city"}
+        {selectedOption || "All cities"}
       </DropdownHeader>
       {isOpen && (
         <DropdownListContainer>
           <DropdownList>
+            <li onClick={() => handleSelectOption("")}>All cities</li>
             {options.map((option) => (
               <li key={option} onClick={() => handleSelectOption(option)}>
                 {option}

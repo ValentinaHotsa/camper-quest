@@ -100,17 +100,19 @@ export const Navigation = styled.ul`
 `;
 
 export const DescriptionSection = styled.section`
-  max-width: 396px;
+  // max-width: 396px;
   padding-left: 16px;
   padding-right: 16px;
   background-color: ${theme.colors.gray};
   margin: 0 auto;
+  margin-bottom: 70px;
 
   @media screen and (min-width: ${theme.breakpoint.tablet}) {
-    max-width: 768px;
+    // max-width: 768px;
+    margin-bottom: 160px;
   }
   @media screen and (min-width: ${theme.breakpoint.desktop}) {
-    max-width: 1440px;
+    // max-width: 1440px;
     height: 500px;
   }
 `;
@@ -118,15 +120,17 @@ export const DescriptionSection = styled.section`
 export const DescriptionContainer = styled.div`
   display: flex;
   margin: 0 auto;
-  justify-content: space-between;
-
+  justify-content: center;
+  gap: 20px;
   @media screen and (min-width: ${theme.breakpoint.tablet}) {
     align-items: center;
+    gap: 50px;
   }
 
   @media screen and (min-width: ${theme.breakpoint.desktop}) {
     max-width: 1200px;
     align-items: center;
+    gap: 120px;
   }
 `;
 
@@ -151,8 +155,9 @@ export const Image = styled.img`
   height: 100%;
   object-fit: cover;
   position: absolute;
-  top: 70px;
+  top: 50px;
   box-shadow: 0px 0px 40px -5px rgba(133, 133, 133, 1);
+  border-radius: 20px;
 
   @media screen and (min-width: ${theme.breakpoint.tablet}) {
     top: 70px;
@@ -165,28 +170,29 @@ export const Image = styled.img`
   }
 `;
 export const SubTitle = styled.h2`
-  color: ${theme.colors.white};
-  font-size: 14px;
-  font-weight: 400;
+  color: ${theme.colors.lightGray};
+  font-size: 13px;
+  font-weight: 600;
   text-align: left;
-  padding: 20px;
   width: 190px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 
   span {
     color: ${theme.colors.red};
   }
 
   @media screen and (min-width: ${theme.breakpoint.tablet}) {
-    font-size: 30px;
-    line-height: 28px;
+    font-size: 24px;
     padding: 50px;
     width: 450px;
+    line-height: 30px;
   }
 
   @media screen and (min-width: ${theme.breakpoint.desktop}) {
-    font-size: 34px;
-    line-height: 34px;
+    font-size: 24px;
     padding: 50px;
+    line-height: 40px;
     width: 600px;
   }
 `;

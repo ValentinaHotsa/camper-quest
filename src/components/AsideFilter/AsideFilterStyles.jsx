@@ -2,8 +2,9 @@ import styled from "@emotion/styled";
 import { theme } from "../../styles/root";
 
 export const AsideContainer = styled.aside`
+  padding-bottom: 50px;
   @media screen and (min-width: ${theme.breakpoint.desktop}) {
-    height: 650px;
+    // height: 770px;
   }
 `;
 
@@ -16,7 +17,7 @@ export const AsStick = styled.div`
     position: sticky;
     width: 360px;
     margin: 0;
-    height: 650px;
+    height: 770px;
   }
 `;
 

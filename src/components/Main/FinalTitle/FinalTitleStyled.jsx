@@ -2,8 +2,8 @@ import styled from "@emotion/styled";
 import { theme } from "../../../styles/root";
 
 export const Section = styled.section`
-  padding: 120px 0;
-  margin-top: 60px;
+  padding-bottom: 120px;
+  margin-top: 80px;
   margin-bottom: 120px;
   max-width: 396px;
   margin-left: auto;
@@ -11,6 +11,7 @@ export const Section = styled.section`
 
   @media screen and (min-width: ${theme.breakpoint.tablet}) {
     max-width: 768px;
+    margin-bottom: 60px;
   }
 
   @media screen and (min-width: ${theme.breakpoint.desktop}) {
@@ -32,24 +33,25 @@ export const Container = styled.div`
 
 export const Title = styled.h3`
   color: ${theme.colors.gray};
-  font-size: 14px;
-  line-height: 18px;
-  font-weight: 500;
-  letter-spacing: -0.36px;
+  font-size: 13px;
+  font-weight: 600;
   text-align: left;
   width: 220px;
-  padding-top: 50px;
+  display: flex;
+  align-items: center;
+  padding-bottom: 100px;
+  padding-right: 10px;
 
   @media screen and (min-width: ${theme.breakpoint.tablet}) {
-    font-size: 34px;
-    padding-top: 40px;
+    font-size: 24px;
     width: 360px;
-    line-height: 40px;
+    padding-bottom: 180px;
+    line-height: 30px;
   }
   @media screen and (min-width: ${theme.breakpoint.desktop}) {
-    font-size: 42px;
-    line-height: 44px;
-    width: 500px;
+    font-size: 24px;
+    line-height: 40px;
+    width: 450px;
   }
 `;
 
@@ -94,6 +96,7 @@ export const Image = styled.img`
   width: 100%;
   height: 100%;
   box-shadow: 0px 0px 40px -5px rgba(133, 133, 133, 1);
+  border-radius: 20px;
 `;
 
 export const ImgContainer = styled.div`

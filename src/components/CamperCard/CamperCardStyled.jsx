@@ -57,14 +57,16 @@ export const TitleCard = styled.h2`
   font-size: 24px;
   font-weight: 600;
   line-height: 30px;
-  letter-spacing: 0%;
-  text-align: left;
+  text-align: center;
   margin: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  width: 250px;
+
   @media screen and (min-width: ${theme.breakpoint.tablet}) {
     width: 400px;
+    text-align: left;
   }
 `;
 
@@ -172,7 +174,7 @@ export const ImgContainer = styled.div`
 export const ImgPrewiev = styled.img`
   width: 100%;
   height: 100%;
-  border-radius: 10px;
+  border-radius: 20px;
   object-fit: cover;
   object-position: right;
 `;

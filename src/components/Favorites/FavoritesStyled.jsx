@@ -18,12 +18,17 @@ export const FavoritesWrapper = styled.section`
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  padding-left: 16px;
+  padding-right: 16px;
   a {
     color: ${theme.colors.red};
   }
   a:hover {
     color: ${theme.colors.redHover};
     text-decoration: underline;
+  }
+  h3 {
+    text-align: center;
   }
 `;
 
