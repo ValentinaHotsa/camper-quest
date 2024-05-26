@@ -2,7 +2,7 @@
   "name": "test-point",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ValentinaHotsa.github.io/test-point/",
+  "homepage": "https://ValentinaHotsa.github.io/camper-quest/",
   "dependencies": {
     "@emotion/css": "^11.11.2",
     "@emotion/react": "^11.11.4",
