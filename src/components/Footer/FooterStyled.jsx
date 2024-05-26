@@ -15,7 +15,6 @@ export const ContainerFooter = styled.footer`
 
 export const IconWrap = styled.div`
   display: flex;
-  gap: 40px;
   justify-content: center;
   margin-top: 15px;
 
@@ -25,14 +24,14 @@ export const IconWrap = styled.div`
   }
 
   svg {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     fill: ${theme.colors.red};
   }
 
   svg:hover {
     fill: ${theme.colors.redHover};
-    width: 43px;
-    height: 43px;
+    width: 33px;
+    height: 33px;
   }
 `;

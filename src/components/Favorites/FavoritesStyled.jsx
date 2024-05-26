@@ -6,7 +6,7 @@ export const FavoritesTitle = styled.h2`
   margin-top: 20px;
   margin-bottom: 48px;
   text-align: center;
-
+  font-weight: 600;
   span {
     color: ${theme.colors.red};
   }
@@ -29,6 +29,8 @@ export const FavoritesWrapper = styled.section`
   }
   h3 {
     text-align: center;
+    color: ${theme.colors.gray};
+    font-weight: 600;
   }
 `;
 
