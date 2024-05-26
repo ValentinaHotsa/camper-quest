@@ -6,21 +6,22 @@ CamperQuest is an app for renting campers in Ukraine. This project is built usin
 
 CamperQuest provides a platform for users to browse and rent campers in Ukraine. The app consists of three main pages:
 
-```
-- `/` - Home Page: A summary of the company.
-- `/catalog` - Catalog Page: A catalog of available campers with filtering options.
-- `/favorite` - Favorites Page: A list of campers the user has marked as favorites.
-```
 
+-  `/` - Home Page: A summary of the company.
+-  `/catalog` - Catalog Page: A catalog of available campers with filtering options.
+-  `/favorite` - Favorites Page: A list of campers the user has marked as favorites.
+ 
 ## Features
 
-  <img src='/src/assets/readme/favoriteReadme.png'>
+  <img src='/src/assets/readme/favoriteReadme.png'>  
 
-- Users can add campers to their favorites by clicking the heart icon on the camper cards.
-  <img src='/src/assets/readme/modalReadme.png'>
+- Users can add campers to their favorites by clicking the heart icon on the camper cards.  
+  
+  <img src='/src/assets/readme/modalReadme.png'>  
 
 - Clicking the "Show More" button on any camper card opens a modal window with detailed information about the camper, including its description, benefits, reviews, and a booking form.
-  <img src='/src/assets/readme/catalogReadme.png'>
+  
+  <img src='/src/assets/readme/catalogReadme.png'>  
 
 - The catalog page includes filtering options to help users find the camper that best suits their needs.
 - The catalog page implements pagination to efficiently manage and display a large number of camper listings
