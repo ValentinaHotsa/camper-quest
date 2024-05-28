@@ -12,28 +12,28 @@ import {
 } from "redux-persist";
 import { advertsReducer } from "./adverts/advertsSlice";
 
-const customReconciler = (
-  inboundState,
-  originalState,
-  reducedState,
-  { debug }
-) => {
-  const newState = {
-    ...reducedState,
-    adverts: {
-      ...reducedState.adverts,
-      adverts: Array.isArray(inboundState?.adverts?.adverts)
-        ? inboundState.adverts.adverts
-        : [],
-    },
-  };
-  return newState;
-};
+// const customReconciler = (
+//   inboundState,
+//   originalState,
+//   reducedState,
+//   { debug }
+// ) => {
+//   const newState = {
+//     ...reducedState,
+//     adverts: {
+//       ...reducedState.adverts,
+//       adverts: Array.isArray(inboundState?.adverts?.adverts)
+//         ? inboundState.adverts.adverts
+//         : [],
+//     },
+//   };
+//   return newState;
+// };
 
 const persistConfig = {
   key: "root",
   storage,
-  stateReconciler: customReconciler,
+  whitelist: ["adverts"],
 };
 
 const rootReducer = combineReducers({

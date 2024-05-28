@@ -4,7 +4,7 @@ import { theme } from "../../styles/root";
 export const AsideContainer = styled.aside`
   padding-bottom: 50px;
   @media screen and (min-width: ${theme.breakpoint.desktop}) {
-    // height: 770px;
+    height: 750px;
   }
 `;
 
@@ -17,7 +17,7 @@ export const AsStick = styled.div`
     position: sticky;
     width: 360px;
     margin: 0;
-    height: 770px;
+    height: 750px;
   }
 `;
 

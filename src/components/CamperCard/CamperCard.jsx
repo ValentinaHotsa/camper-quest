@@ -4,7 +4,7 @@ import {
   addToFavorite,
   removeFromFavorite,
 } from "../../redux/adverts/advertsSlice";
-import { selectAdverts, selectFavorites } from "../../redux/adverts/selectors";
+import { selectFavorites } from "../../redux/adverts/selectors";
 import svg from "../../assets/icons.svg";
 import Modal from "../Modal/Modal";
 import {
