@@ -103,6 +103,8 @@ const FormComponent = () => {
                       }}
                       dateFormat="dd.MM.yyyy"
                       placeholderText="Booking date"
+                      closeOnScroll={true}
+                      showIcon
                       icon={
                         <svg>
                           <use href={`${svg}#icon-calendarH`}></use>

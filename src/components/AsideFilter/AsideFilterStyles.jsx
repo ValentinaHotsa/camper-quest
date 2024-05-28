@@ -4,7 +4,7 @@ import { theme } from "../../styles/root";
 export const AsideContainer = styled.aside`
   padding-bottom: 50px;
   @media screen and (min-width: ${theme.breakpoint.desktop}) {
-    height: 750px;
+    height: 800px;
   }
 `;
 
@@ -18,6 +18,7 @@ export const AsStick = styled.div`
     width: 360px;
     margin: 0;
     height: 750px;
+    top: 50px;
   }
 `;
 
@@ -169,9 +170,9 @@ export const CheckboxWrap = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  gap: 8px;
-  width: 110px;
-  height: 95px;
+  gap: 4px;
+  width: 88px;
+  height: 75px;
   border: 1px solid rgba(16, 24, 40, 0.2);
   border-radius: 10px;
   cursor: pointer;
@@ -182,21 +183,37 @@ export const CheckboxWrap = styled.div`
   }
 
   span {
-    color: rgb(16, 24, 40);
-    font-size: 16px;
+    color: ${theme.colors.black};
+    font-size: 13px;
     font-weight: 500;
-    line-height: 20px;
+    line-height: 12px;
   }
 
   svg {
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
     fill: transparent;
     stroke: #101828;
   }
 
   input:checked + & {
     border-color: ${theme.colors.redHover};
+  }
+
+  @media screen and (min-width: ${theme.breakpoint.tablet}) {
+    width: 110px;
+    height: 95px;
+    gap: 8px;
+
+    span {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    svg {
+      width: 40px;
+      height: 40px;
+    }
   }
 `;
 export const FormFilterRadio = styled.form`
@@ -234,7 +251,7 @@ export const RadioWrap = styled.div`
 
   span {
     color: ${theme.colors.black};
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 500;
     line-height: 12px;
   }

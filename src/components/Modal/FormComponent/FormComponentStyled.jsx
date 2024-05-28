@@ -110,6 +110,13 @@ export const FormStyle = styled(Form)`
     color: ${theme.colors.white};
     background-color: rgba(228, 72, 72, 0.63);
   }
+  .react-datepicker__calendar-icon {
+    right: 5px;
+    top: 12px;
+  }
+  .react-datepicker__view-calendar-icon input {
+    padding: 18px;
+  }
 `;
 
 export const Error = styled(ErrorMessage)`
@@ -161,7 +168,7 @@ export const InputField = styled.input`
   outline: none;
 
   @media screen and (min-width: 550px) {
-    width: 364px;
+    width: 400px;
   }
 `;
 
@@ -179,7 +186,7 @@ export const TextareaField = styled.textarea`
   outline: none;
   resize: none;
   @media screen and (min-width: 550px) {
-    width: 364px;
+    width: 400px;
   }
 `;
 
@@ -215,7 +222,7 @@ export const StyledDatePicker = styled(DatePicker)`
   line-height: 20px;
   outline: none;
   @media screen and (min-width: 550px) {
-    width: 364px;
+    width: 400px;
   }
 `;
 
