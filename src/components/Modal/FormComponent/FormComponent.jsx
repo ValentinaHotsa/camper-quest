@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Global } from "@emotion/react";
 import { Formik, Field, Form } from "formik";
 import * as Yup from "yup";
@@ -32,12 +31,6 @@ const FormComponent = () => {
       .required("Booking date is required")
       .min(new Date(), "Booking date must be in the future"),
   });
-
-  const [selectedDate, setSelectedDate] = useState(null);
-  const handleDateChange = (date, form) => {
-    setSelectedDate(date);
-    form.setFieldValue("date", date || "");
-  };
 
   const initialValues = {
     name: "",

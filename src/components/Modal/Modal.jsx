@@ -4,7 +4,6 @@ import FormComponent from "./FormComponent/FormComponent";
 import Features from "./Features/Features";
 import Review from "./Reviews/Review";
 import {
-  ModalContent,
   ModalWrapper,
   Popup,
   CloseButton,
