@@ -98,7 +98,7 @@ const FormComponent = () => {
 
             <InputContainer>
               <HiddenLabel htmlFor="date">Select booking date</HiddenLabel>
-              <Field name="date">
+              <Field as={InputField} name="date">
                 {({ field, form }) => (
                   <>
                     <StyledDatePicker

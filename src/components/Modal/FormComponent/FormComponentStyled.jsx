@@ -117,8 +117,12 @@ export const Error = styled(ErrorMessage)`
   color: red;
   position: absolute;
   font-size: 14px;
-  right: 45px;
-  top: 20px;
+  right: 8px;
+  top: 37px;
+  @media screen and (min-width: 550px) {
+    right: 48px;
+    top: 20px;
+  }
 `;
 
 export const TitleForm = styled.h3`
@@ -144,7 +148,7 @@ export const InputContainer = styled.div`
 `;
 
 export const InputField = styled.input`
-  width: 364px;
+  width: 202px;
   border-radius: 10px;
   border: none;
   padding: 18px;
@@ -154,12 +158,15 @@ export const InputField = styled.input`
   font-weight: 400;
   line-height: 20px;
   letter-spacing: 0%;
-  outline:none;
+  outline: none;
+
+  @media screen and (min-width: 550px) {
+    width: 364px;
   }
 `;
 
 export const TextareaField = styled.textarea`
-  width: 364px;
+  width: 202px;
   height: 114px;
   border-radius: 10px;
   border: none;
@@ -171,10 +178,12 @@ export const TextareaField = styled.textarea`
   line-height: 20px;
   outline: none;
   resize: none;
+  @media screen and (min-width: 550px) {
+    width: 364px;
+  }
 `;
 
 export const Button = styled.button`
-  width: 160px;
   height: 56px;
   border-radius: 200px;
   background: ${theme.colors.red};
@@ -184,6 +193,9 @@ export const Button = styled.button`
   line-height: 24px;
   border: none;
   margin-top: 6px;
+  @media screen and (min-width: 550px) {
+    width: 160px;
+  }
 
   &:hover {
     background: ${theme.colors.redHover};
@@ -193,7 +205,7 @@ export const Button = styled.button`
 export const StyledDatePicker = styled(DatePicker)`
   border-radius: 4px;
   background: ${theme.colors.white};
-  width: 364px;
+  width: 202px;
   border-radius: 10px;
   border: none;
   padding: 18px;
@@ -202,6 +214,9 @@ export const StyledDatePicker = styled(DatePicker)`
   font-weight: 400;
   line-height: 20px;
   outline: none;
+  @media screen and (min-width: 550px) {
+    width: 364px;
+  }
 `;
 
 export const HiddenLabel = styled.label`

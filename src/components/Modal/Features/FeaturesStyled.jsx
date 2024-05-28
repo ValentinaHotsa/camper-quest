@@ -8,8 +8,8 @@ export const LeftWrap = styled.div`
 `;
 
 export const FeaturesList = styled.ul`
-  width: 430px;
-  height: 250px;
+  // width: 430px;
+  // height: 250px;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -32,6 +32,14 @@ export const FeaturesList = styled.ul`
     height: 20px;
     fill: transparent;
     stroke: ${theme.colors.black};
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 430px;
+    height: 250px;
+    li {
+      font-size: 12px;
+    }
   }
 `;
 

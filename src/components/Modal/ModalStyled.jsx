@@ -3,47 +3,36 @@ import { theme } from "../../styles/root";
 
 export const Popup = styled.div`
   position: fixed;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
   transition: opacity 0.3s;
-  overflow: auto;
-`;
-
-export const ModalWrapper = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  // overflow: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
-  scrollbar-color: transparent transparent;
-  scrollbar-width: none;
 `;
 
-export const ModalContent = styled.div`
+export const ModalWrapper = styled.div`
+  width: 90vw;
   position: absolute;
-  padding: 40px;
-  height: auto;
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  background-color: white;
-  backdrop-filter: blur(5px);
-  transform: translateY(-50px);
-  transition: opacity 0.3s, transform 0.3s;
-  max-height: 90vh;
   overflow: auto;
-  max-width: 984px;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: white;
+  scrollbar-color: transparent transparent;
+  scrollbar-width: none;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  max-height: 90vh;
+
+  @media screen and (min-width: 500px) {
+    max-width: 982px;
+    padding: 40px;
+  }
 `;
 
 export const CloseButton = styled.button`
@@ -69,18 +58,26 @@ export const TopWrap = styled.div`
 
 export const TitleCard = styled.h2`
   color: rgb(16, 24, 40);
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 600;
   line-height: 30px;
   letter-spacing: 0%;
   text-align: left;
   margin: 6px 0;
+  @media screen and (min-width: 500px) {
+    font-size: 24px;
+  }
 `;
 
 export const RevLocWraper = styled.div`
   display: flex;
-  gap: 18px;
+  flex-direction: column;
+  gap: 8px;
   margin-top: 8px;
+  @media screen and (min-width: 500px) {
+    flex-direction: row;
+    gap: 18px;
+  }
 `;
 
 export const Rating = styled.p`
@@ -118,12 +115,12 @@ export const Location = styled.p`
 
 export const Price = styled.div`
   color: ${theme.colors.black};
-  font-size: 24px;
+  font-size: 18px;
   font-weight: 600;
   line-height: 30px;
   letter-spacing: 0%;
   text-align: left;
-  margin-top: 24px;
+  margin-top: 6px;
 
   svg {
     width: 20px;
@@ -131,25 +128,37 @@ export const Price = styled.div`
     fill: transparent;
     stroke: ${theme.colors.black};
   }
+
+  @media screen and (min-width: 500px) {
+    font-size: 24px;
+    margin-top: 24px;
+  }
 `;
 
 export const ImgList = styled.div`
   margin-top: 24px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
   gap: 16px;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+  }
 `;
 
 export const ImgThumb = styled.div`
-  width: 290px;
-  height: 310px;
+  max-height: 310px;
 
   img {
     width: 100%;
-    height: 100%;
-    border-radius: 10px;
+    height: 310px;
+    border-radius: 20px;
     object-fit: cover;
     object-position: center;
+  }
+  @media screen and (min-width: 768px) {
+    width: 290px;
+    height: auto;
   }
 `;
 
@@ -197,21 +206,33 @@ export const Button = styled.button`
 
 export const TabContent = styled.div`
   display: flex;
-  margin-top: 44px;
+  flex-direction: column;
+  margin-top: 24px;
   gap: 24px;
+  align-items: center;
+  @media screen and (min-width: 1440px) {
+    flex-direction: row;
+    margin-top: 44px;
+  }
 `;
 
 export const LeftWrap = styled.div`
-  width: 430px;
+  @media screen and (min-width: 768px) {
+    width: 430px;
+  }
 `;
 
 export const RightWrap = styled.div`
   padding: 24px;
-  width: 448px;
-  height: 532px;
+  width: 250px;
   box-sizing: border-box;
   border: 1px solid rgba(16, 24, 40, 0.2);
   border-radius: 10px;
+
+  @media screen and (min-width: 550px) {
+    width: 448px;
+    height: 532px;
+  }
 `;
 
 export const activeTabStyle = styled`

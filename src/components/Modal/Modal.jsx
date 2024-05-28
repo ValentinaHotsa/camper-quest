@@ -62,72 +62,70 @@ const Modal = ({ onClose, isOpen, data }) => {
   return (
     <Popup onClick={handleClickOutside} ref={backdrop}>
       <ModalWrapper>
-        <ModalContent>
-          <TopWrap>
-            <TitleCard>{name}</TitleCard>
-            <CloseButton onClick={onClose}>
-              <svg>
-                <use href={`${svg}#icon-close`}></use>
-              </svg>
-            </CloseButton>
-          </TopWrap>
-          <RevLocWraper>
-            <Rating>
-              <svg>
-                <use href={`${svg}#icon-star`}></use>
-              </svg>
-              {rating}({reviews.length} Reviews)
-            </Rating>
-            <Location>
-              <svg>
-                <use href={`${svg}#icon-map-pin`}></use>
-              </svg>
-              {location}
-            </Location>
-          </RevLocWraper>
-          <Price>€{price + " "}</Price>
-          <ImgList>
-            <ImgThumb>
-              <img src={gallery[0]} alt={name} />
-            </ImgThumb>
-            <ImgThumb>
-              <img src={gallery[1]} alt={name} />
-            </ImgThumb>
-            <ImgThumb>
-              <img src={gallery[2]} alt={name} />
-            </ImgThumb>
-          </ImgList>
-          <Description>{description}</Description>
-          <TabWraper>
-            <Button
-              type="button"
-              onClick={() => handleTabChange("Features")}
-              active={activeTab === "Features"}
-            >
-              Features
-            </Button>
-            <Button
-              type="button"
-              onClick={() => handleTabChange("Reviews")}
-              active={activeTab === "Reviews"}
-            >
-              Reviews
-            </Button>
-          </TabWraper>
+        <TopWrap>
+          <TitleCard>{name}</TitleCard>
+          <CloseButton onClick={onClose}>
+            <svg>
+              <use href={`${svg}#icon-close`}></use>
+            </svg>
+          </CloseButton>
+        </TopWrap>
+        <RevLocWraper>
+          <Rating>
+            <svg>
+              <use href={`${svg}#icon-star`}></use>
+            </svg>
+            {rating}({reviews.length} Reviews)
+          </Rating>
+          <Location>
+            <svg>
+              <use href={`${svg}#icon-map-pin`}></use>
+            </svg>
+            {location}
+          </Location>
+        </RevLocWraper>
+        <Price>€{price + " "}</Price>
+        <ImgList>
+          <ImgThumb>
+            <img src={gallery[0]} alt={name} />
+          </ImgThumb>
+          <ImgThumb>
+            <img src={gallery[1]} alt={name} />
+          </ImgThumb>
+          <ImgThumb>
+            <img src={gallery[2]} alt={name} />
+          </ImgThumb>
+        </ImgList>
+        <Description>{description}</Description>
+        <TabWraper>
+          <Button
+            type="button"
+            onClick={() => handleTabChange("Features")}
+            active={activeTab === "Features"}
+          >
+            Features
+          </Button>
+          <Button
+            type="button"
+            onClick={() => handleTabChange("Reviews")}
+            active={activeTab === "Reviews"}
+          >
+            Reviews
+          </Button>
+        </TabWraper>
 
-          <TabContent>
-            <LeftWrap>
-              {activeTab === "Features" ? (
-                <Features data={data} />
-              ) : (
-                <Review data={data} />
-              )}
-            </LeftWrap>
-            <RightWrap>
-              <FormComponent />
-            </RightWrap>
-          </TabContent>
-        </ModalContent>
+        <TabContent>
+          <LeftWrap>
+            {activeTab === "Features" ? (
+              <Features data={data} />
+            ) : (
+              <Review data={data} />
+            )}
+          </LeftWrap>
+          <RightWrap>
+            <FormComponent />
+          </RightWrap>
+        </TabContent>
       </ModalWrapper>
     </Popup>
   );
