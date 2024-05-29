@@ -221,8 +221,19 @@ export const StyledDatePicker = styled(DatePicker)`
   font-weight: 400;
   line-height: 20px;
   outline: none;
+
   @media screen and (min-width: 550px) {
     width: 400px;
+  }
+`;
+export const CalendarWrapper = styled.div`
+  position: relative;
+  svg {
+    width: 22px;
+    height: 22px;
+  }
+  svg: hover {
+    fill: ${theme.colors.redHover};
   }
 `;
 

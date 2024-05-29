@@ -1,5 +1,6 @@
 import { Global } from "@emotion/react";
 import { Formik, Field, Form } from "formik";
+import { useRef } from "react";
 import * as Yup from "yup";
 import swal from "sweetalert";
 import "react-datepicker/dist/react-datepicker.css";
@@ -15,6 +16,7 @@ import {
   InputField,
   TextareaField,
   FormStyle,
+  CalendarWrapper,
 } from "./FormComponentStyled";
 import { SweetAlertStyles } from "./FormComponentStyled";
 
@@ -48,7 +50,13 @@ const FormComponent = () => {
     resetForm();
     setSubmitting(false);
   };
+  const datepickerRef = useRef(null);
 
+  const handleIconClick = () => {
+    if (datepickerRef.current) {
+      datepickerRef.current.setFocus();
+    }
+  };
   return (
     <>
       <Global styles={SweetAlertStyles} />
@@ -93,8 +101,9 @@ const FormComponent = () => {
               <HiddenLabel htmlFor="date">Select booking date</HiddenLabel>
               <Field as={InputField} name="date">
                 {({ field, form }) => (
-                  <>
+                  <CalendarWrapper>
                     <StyledDatePicker
+                      ref={datepickerRef}
                       selected={field.value}
                       id="date"
                       onChange={(date) => {
@@ -104,18 +113,30 @@ const FormComponent = () => {
                       dateFormat="dd.MM.yyyy"
                       placeholderText="Booking date"
                       closeOnScroll={true}
-                      showIcon
-                      icon={
-                        <svg>
-                          <use href={`${svg}#icon-calendarH`}></use>
-                        </svg>
+                      customInput={
+                        <InputField
+                          {...field}
+                          as="input"
+                          style={{ paddingRight: "36px" }}
+                        />
                       }
                     />
-
+                    <svg
+                      onClick={handleIconClick}
+                      style={{
+                        position: "absolute",
+                        right: "10px",
+                        top: "50%",
+                        transform: "translateY(-50%)",
+                        cursor: "pointer",
+                      }}
+                    >
+                      <use href={`${svg}#icon-calendarH`}></use>
+                    </svg>
                     {form.errors.date && form.touched.date && (
                       <Error name="date" component="div" />
                     )}
-                  </>
+                  </CalendarWrapper>
                 )}
               </Field>
             </InputContainer>
