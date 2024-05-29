@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/camper-quest/static/css/main.9f3786b1.css",
-    "main.js": "/camper-quest/static/js/main.18c78822.js",
+    "main.js": "/camper-quest/static/js/main.36f6cbd5.js",
     "static/js/453.b13c701f.chunk.js": "/camper-quest/static/js/453.b13c701f.chunk.js",
     "static/js/742.04fd4641.chunk.js": "/camper-quest/static/js/742.04fd4641.chunk.js",
     "static/js/633.d7f14dcb.chunk.js": "/camper-quest/static/js/633.d7f14dcb.chunk.js",
@@ -11,7 +11,7 @@
     "static/css/759.d1e14c53.chunk.css": "/camper-quest/static/css/759.d1e14c53.chunk.css",
     "static/js/759.e274a377.chunk.js": "/camper-quest/static/js/759.e274a377.chunk.js",
     "static/js/419.3ef5397d.chunk.js": "/camper-quest/static/js/419.3ef5397d.chunk.js",
-    "static/js/808.4fbfa76e.chunk.js": "/camper-quest/static/js/808.4fbfa76e.chunk.js",
+    "static/js/808.ba20c8ee.chunk.js": "/camper-quest/static/js/808.ba20c8ee.chunk.js",
     "static/media/subtitle.jpg": "/camper-quest/static/media/subtitle.9c1ecd4af566d5bc2fda.jpg",
     "static/media/finalblock2.jpg": "/camper-quest/static/media/finalblock2.88c1de26e81f25f0dfd1.jpg",
     "static/media/finalblock1.jpg": "/camper-quest/static/media/finalblock1.86d195ffd5c425d620f7.jpg",
@@ -20,7 +20,7 @@
     "static/media/icons.svg": "/camper-quest/static/media/icons.b0b88a62d802f9c55328e5a5895e3361.svg",
     "index.html": "/camper-quest/index.html",
     "main.9f3786b1.css.map": "/camper-quest/static/css/main.9f3786b1.css.map",
-    "main.18c78822.js.map": "/camper-quest/static/js/main.18c78822.js.map",
+    "main.36f6cbd5.js.map": "/camper-quest/static/js/main.36f6cbd5.js.map",
     "453.b13c701f.chunk.js.map": "/camper-quest/static/js/453.b13c701f.chunk.js.map",
     "742.04fd4641.chunk.js.map": "/camper-quest/static/js/742.04fd4641.chunk.js.map",
     "633.d7f14dcb.chunk.js.map": "/camper-quest/static/js/633.d7f14dcb.chunk.js.map",
@@ -30,10 +30,10 @@
     "759.d1e14c53.chunk.css.map": "/camper-quest/static/css/759.d1e14c53.chunk.css.map",
     "759.e274a377.chunk.js.map": "/camper-quest/static/js/759.e274a377.chunk.js.map",
     "419.3ef5397d.chunk.js.map": "/camper-quest/static/js/419.3ef5397d.chunk.js.map",
-    "808.4fbfa76e.chunk.js.map": "/camper-quest/static/js/808.4fbfa76e.chunk.js.map"
+    "808.ba20c8ee.chunk.js.map": "/camper-quest/static/js/808.ba20c8ee.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9f3786b1.css",
-    "static/js/main.18c78822.js"
+    "static/js/main.36f6cbd5.js"
   ]
 }
